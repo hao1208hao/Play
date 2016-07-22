@@ -1,0 +1,60 @@
+//
+//  qdb.pch
+//  qiandaibao_pos
+//
+//  Created by haohao on 16/5/7.
+//  Copyright © 2016年 钱袋宝. All rights reserved.
+//
+
+#ifndef qdb_pch
+#define qdb_pch
+
+// 系统相关
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+// 自定义常量
+#import "QDBConstant.h"
+
+// 自定义导航栏item
+#import "UIBarButtonItem+AD.h"
+
+// 引用宏
+#import "QDBMacros.h"
+
+
+// 自定义导航栏item
+//#import "UIBarButtonItem+AD.h"
+
+//define this constant if you want to use Masonry without the 'mas_' prefix
+#define MAS_SHORTHAND
+//define this constant if you want to enable auto-boxing for default syntax
+#define MAS_SHORTHAND_GLOBALS
+// 适配相关
+#import "Masonry.h"
+
+#pragma mark - 常用引用文件
+#pragma mark
+
+// 网络请求
+#import "MHNetwrok.h"
+#import <AFNetworking.h>
+#import "QDBReqParamTool.h"
+
+#import "QDBNavController.h"
+//自定义按钮
+//#import "CustomBtn.h"
+#import "UIButton+Corner.h"
+#import "QDBInfo.h"
+#import "QDBLocation.h"
+#import "QDBDataManager.h"
+#import "QDBUserInfo.h"
+#import "QDBAlert.h"
+#import "MBProgressHUD.h"
+#import "MBProgressHUD+MJ.h"
+
+#import <SSKeychain.h>
+#import "QDBSingleton.h"
+#import "UIView+Extension.h"
+#import <UMMobClick/MobClick.h>
+#endif /* qdb_pch */
