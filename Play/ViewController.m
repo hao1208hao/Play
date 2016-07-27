@@ -7,16 +7,20 @@
 //
 
 #import "ViewController.h"
-#import <AVFoundation/AVFoundation.h>
 
+#import <AVFoundation/AVFoundation.h>
+#import "TakeInSecretVC.h"
 #import "QRTool.h"
 #import "ScanQR.h"
 
 
-@interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,scanResultDelegate>
+@interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,scanResultDelegate,getTakeImgDelegate>
 
 /** 最后一次拍照ID */
 @property(nonatomic,assign) NSInteger lastTakePicID;
+
+
+
 
 @end
 
@@ -48,7 +52,7 @@
 }
 
 -(void)foreach{
-    NSArray* titleArr = @[@"微信朋友圈",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ"];
+    NSArray* titleArr = @[@"拍照",@"生成二维码",@"扫一扫",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ"];
     
     int col = 5;//列
     int row = titleArr.count/col; //行
@@ -70,7 +74,8 @@
         btn.layer.cornerRadius = 4;
         btn.titleLabel.font = [UIFont systemFontOfSize:11.0f];
         NSString* str = [NSString stringWithFormat:@"拍照%d",i];
-        [btn setTitle:str forState:UIControlStateNormal];
+//        [btn setTitle:str forState:UIControlStateNormal];
+        [btn setTitle:titleArr[i] forState:UIControlStateNormal];
         [btn setBackgroundColor:[UIColor redColor]];
         [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [btn setTag:i];
@@ -86,21 +91,17 @@
 //    [self startSystemCamera];
 //    return;
     if (tag == 0) {
-        
+        [self take];
     }else if(tag == 1){
-        
-     UIImage* img =[QRTool createQRImgWithContent:@"http://www.baidu.com" imgSize:200];
-        
-    UIImageView* imgV = [[UIImageView alloc]initWithImage:img];
-    [imgV setFrame:CGRectMake(50, 100, 200, 200)];
-    [self.view addSubview:imgV];
-        
-        
+        UIImage* img =[QRTool createQRImgWithContent:@"http://www.baidu.com" imgSize:200];
+        UIImageView* imgV = [[UIImageView alloc]initWithImage:img];
+        [imgV setFrame:CGRectMake(50, 100, 200, 200)];
+        [self.view addSubview:imgV];
     }else if(tag == 2){
         ScanQR *scan = [[ScanQR alloc]init];
         scan.scanDelegate = self;
-        [self presentViewController:scan animated:YES completion:nil];
         
+        [self.navigationController pushViewController:scan animated:YES];
     }else if(tag == 3){
         
     }else if(tag == 4){
@@ -142,6 +143,17 @@
         return;
     }
 }
+
+-(void)take{
+    TakeInSecretVC* ts = [TakeInSecretVC sharedInstance];
+    ts.takeInSecretDelegate = self;
+    [ts startTakePhoto];
+}
+
+-(void)getTakeInSecretImg:(UIImage *)img{
+    NSLog(@"获取人脸信息成功");
+}
+
 
 -(void)startSystemCamera{
     [self checkCaremaAuth];

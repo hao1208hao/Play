@@ -9,7 +9,7 @@
 #import "QDBTabBarVC.h"
 #import "QDBNavController.h"
 #import "ViewController.h"
-
+#import "SecondVC.h"
 
 @interface QDBTabBarVC ()
 
@@ -32,18 +32,12 @@
 - (void)setupAllChildViewControllers
 {
     //0.首页
-     ViewController * home = [[ViewController alloc]init];
+    ViewController * home = [[ViewController alloc]init];
+    SecondVC* second = [[SecondVC alloc]init];
+    
+    [self setupChildViewController:home title:@"第一页" imageName:@"1" selectedImageName:@"1"];
 
-    [self setupChildViewController:home title:@"首页" imageName:@"1" selectedImageName:@"1"];
-//    //1.交易记录
-//    
-//    QDBTransRecordViewController *transRecordVc = [[QDBTransRecordViewController alloc]init];
-//
-    [self setupChildViewController:home title:@"交易记录" imageName:@"1" selectedImageName:@"1"];
-//
-//    //2.更多
-//    QDBMoreViewController *moreVc = [[QDBMoreViewController alloc]init];
-//    [self setupChildViewController:moreVc title:@"更多" imageName:@"more" selectedImageName:@"more_sel"];
+    [self setupChildViewController:second title:@"第二页" imageName:@"1" selectedImageName:@"1"];
 
     
 }
@@ -58,7 +52,10 @@
  */
 - (void)setupChildViewController:(UIViewController *)childVc title:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName {
     // 1.设置控制器的属性
-    childVc.title = title;
+    //当self.navigationItem.title，self.tabBarItem.title没有赋值情况下值和self.title一致。
+    childVc.title = title;  //设置tabbar 的title
+    childVc.navigationItem.title = @"";  //导航title
+    
     childVc.tabBarItem.image = [UIImage imageNamed:imageName];
     childVc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     

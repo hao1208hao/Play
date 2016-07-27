@@ -16,7 +16,6 @@
 //+(NSString*)getAppVersion;
 /**appVersion*/
 +(NSString *)formatAppVersion;
-
 /** md5加密 */
 +(NSString*)md5:(NSString *)input;
 /** 手机设备号 */

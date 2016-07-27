@@ -31,13 +31,13 @@
     // 设置标题文字颜色
 //    [navBar setBackgroundImage:img forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     
-//    [navBar setBackgroundImage:[UIImage new] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     [navBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     [navBar setShadowImage:[UIImage new]];
     attrs[NSForegroundColorAttributeName] = NavBarTitleColor;
     attrs[NSFontAttributeName] = [UIFont systemFontOfSize:NavBarTitleFont];
     [navBar setTitleTextAttributes:attrs];
+    
 }
 
 /**
@@ -57,14 +57,6 @@
     [super pushViewController:viewController animated:animated];
 }
 
-//-(UIViewController *)popViewControllerAnimated:(BOOL)animated{
-//    //执行自定义动画
-//    CATransition *myTranstiton = [CATransition animation];
-//    myTranstiton.duration = 0.5;
-//    myTranstiton.type = kCATransitionFade;
-//    [self.view.layer addAnimation:myTranstiton forKey:@"transtiton"];
-//    return [super popViewControllerAnimated:NO];
-//}
 /**
  *  返回按钮(Pop)
  */

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "QDBTabBarVC.h"
+#import "GuideVC.h"
 
 @interface AppDelegate ()
 
@@ -23,19 +24,21 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = GlobalNavColor;
-    
-   
-    //直接切换主界面
     application.statusBarHidden = NO;
-    application.statusBarStyle = UIStatusBarStyleLightContent;
+    application.statusBarStyle = UIStatusBarStyleLightContent;    
     
-   
+    /** 是否想要显示引导页----demo 设置每次都显示引导页 */
+    BOOL showGuide = false;
+    if (showGuide) {
+        GuideVC* guide = [[GuideVC alloc]init];
+        self.window.rootViewController = guide;
+    }else{
+        QDBTabBarVC *tabbar = [[QDBTabBarVC alloc] init];
+        QDBNavController * nav = [[QDBNavController alloc]initWithRootViewController:tabbar];
+        self.window.rootViewController = nav;
+    }
     
-    QDBTabBarVC *mainTabbar = [[QDBTabBarVC alloc] init];
-    //[UIApplication sharedApplication].keyWindow.rootViewController = mainTabbar;
-    self.window.rootViewController = mainTabbar;
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 

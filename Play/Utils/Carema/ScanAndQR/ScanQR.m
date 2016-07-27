@@ -29,14 +29,31 @@
     
     // 标题
     self.title = @"扫一扫";
-    //self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithBackTarget:self action:@selector(back)];
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     [self scanQR];
 
 }
 
--(void)checkCaremaAuth{
-    /** 判断授权状态 */
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTitle:@"返回" target:self action:@selector(clickBack)];
+    
+    
+    UINavigationBar *navBar = [UINavigationBar appearance];
+    [navBar setTintColor:[UIColor blueColor]];
+    [navBar setBarTintColor:[UIColor redColor]];
+    
+}
+
+-(void)clickBack{
+    [_session stopRunning];  //停止扫描
+    [self.qrView stopAnimation];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)scanQR{
+    
     AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if (status == AVAuthorizationStatusAuthorized) {
         //授权
@@ -44,11 +61,10 @@
     }else if(status == AVAuthorizationStatusNotDetermined){
         //未决定
     }else{
-        [[QDBAlert shareAlertTool]showAlertViewWithVC:self title:@"提示" message:@"您可以进入系统“设置>隐私>相机”,允许“此APP”访问您的相机" cancel:@"取消" other:@"设置" cancleAction:^{
-            /** 返回输入金额页面 */
+        //拒绝----弹窗提示跳转设置权限
+        [[QDBAlert shareAlertTool]showAlertViewWithVC:self title:@"提示" message:@"当前没有权限使用相机,是否前往更改权限?" cancel:@"取消" other:@"前往设置" cancleAction:^{
             [self.navigationController popViewControllerAnimated:YES];
         } confirmAction:^{
-            /** 跳转到授权设置 */
             if ([[[UIDevice currentDevice]systemVersion]floatValue]>=8.0) {
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
             }else{
@@ -58,11 +74,6 @@
         }];
         return;
     }
-}
-
--(void)scanQR{
-    
-    [self checkCaremaAuth];
     
     _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     
@@ -86,17 +97,6 @@
         [_session addOutput:self.output];
     }
     
-    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-    if (status == AVAuthorizationStatusAuthorized) {
-        //授权
-        
-    }else if(status == AVAuthorizationStatusNotDetermined){
-        //未决定
-    }else{
-        
-        
-        return;
-    }
     
     //增加条形码扫描
     // 条码类型 AVMetadataObjectTypeQRCode
@@ -110,6 +110,8 @@
     _preview =[AVCaptureVideoPreviewLayer layerWithSession:_session];
     _preview.videoGravity =AVLayerVideoGravityResizeAspectFill;
     _preview.frame =self.view.layer.bounds;
+    
+    
     [self.view.layer insertSublayer:_preview atIndex:0];
     
     [_session startRunning];
@@ -164,7 +166,7 @@
         AVMetadataMachineReadableCodeObject *object = [metadataObjects lastObject];
         
         [self getResult:object.stringValue];
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popViewControllerAnimated:YES];
     } else {
         NSLog(@"没有扫描到数据");
     }
