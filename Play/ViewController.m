@@ -12,15 +12,12 @@
 #import "TakeInSecretVC.h"
 #import "QRTool.h"
 #import "ScanQR.h"
-
+#import "UIImage+Image.h"
 
 @interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,scanResultDelegate,getTakeImgDelegate>
 
 /** 最后一次拍照ID */
 @property(nonatomic,assign) NSInteger lastTakePicID;
-
-
-
 
 @end
 
@@ -52,7 +49,7 @@
 }
 
 -(void)foreach{
-    NSArray* titleArr = @[@"拍照",@"生成二维码",@"扫一扫",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ"];
+    NSArray* titleArr = @[@"拍照",@"生成二维码",@"扫一扫",@"截屏",@"微信朋友圈",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ"];
     
     int col = 5;//列
     int row = titleArr.count/col; //行
@@ -103,6 +100,9 @@
         
         [self.navigationController pushViewController:scan animated:YES];
     }else if(tag == 3){
+        /** 截屏并保存到相册 */
+        UIImage *image =  [UIImage imageWithCaputureView:self.view];
+        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
         
     }else if(tag == 4){
         
@@ -118,6 +118,15 @@
         
     }
 }
+
+// 监听保存完成，必须实现这个方法
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    if (!error) {
+        NSLog(@"保存图片成功");
+    }
+}
+
 
 -(void)checkCaremaAuth{
     /** 判断授权状态 */

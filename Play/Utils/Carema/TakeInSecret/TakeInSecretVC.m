@@ -116,8 +116,8 @@
         NSLog(@">>>>> 人脸监测【失败】啦 ～！！！");
         return;
     }
-    NSLog(@">>>>> 人脸监测【成功】并保存到相册～！！！>>>>>> ");
-    UIImageWriteToSavedPhotosAlbum(aImage, self, nil, nil);
+    
+    UIImageWriteToSavedPhotosAlbum(aImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     
     [self.takeInSecretDelegate getTakeInSecretImg:aImage];
     
@@ -125,6 +125,14 @@
     //        [self markAfterFaceDetect:features];
     //    });
     
+}
+
+// 监听保存完成，必须实现这个方法
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    if (!error) {
+       NSLog(@">>>>> 人脸监测【成功】并保存到相册～！！！>>>>>> ");
+    }
 }
 
 //人脸标识

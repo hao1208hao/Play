@@ -22,12 +22,15 @@
 		A0504A011D2F8BDE00DF9978 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05049FF1D2F8BDE00DF9978 /* Main.storyboard */; };
 		A0504A031D2F8BDE00DF9978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0504A021D2F8BDE00DF9978 /* Assets.xcassets */; };
 		A0504A061D2F8BDE00DF9978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0504A041D2F8BDE00DF9978 /* LaunchScreen.storyboard */; };
+		A05A93281D50784800601833 /* UIScrollView+TwitterCover.m in Sources */ = {isa = PBXBuildFile; fileRef = A05A93271D50784800601833 /* UIScrollView+TwitterCover.m */; };
 		A0D4C37F1D4877AE002A2A7F /* qr_scan_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D4C3761D4877AE002A2A7F /* qr_scan_line@2x.png */; };
 		A0D4C3801D4877AE002A2A7F /* qr_scan_line_jd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D4C3771D4877AE002A2A7F /* qr_scan_line_jd@2x.png */; };
 		A0D4C3811D4877AE002A2A7F /* QRTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D4C3791D4877AE002A2A7F /* QRTool.m */; };
 		A0D4C3821D4877AE002A2A7F /* QRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D4C37B1D4877AE002A2A7F /* QRView.m */; };
 		A0D4C3831D4877AE002A2A7F /* ScanQR.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D4C37D1D4877AE002A2A7F /* ScanQR.m */; };
 		A0D4C3861D4877D4002A2A7F /* TakeInSecretVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D4C3851D4877D4002A2A7F /* TakeInSecretVC.m */; };
+		A0D4C38A1D489463002A2A7F /* DCSLocalWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D4C3891D489463002A2A7F /* DCSLocalWebViewVC.m */; };
+		A0D4C38D1D489492002A2A7F /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D4C38C1D489492002A2A7F /* UIImage+Image.m */; };
 		A0FDC51A1D2F934400F7030C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FDC5191D2F934400F7030C /* AppDelegate.m */; };
 		A0FDC5201D2F97BA00F7030C /* QDBNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FDC51D1D2F97BA00F7030C /* QDBNavController.m */; };
 		A0FDC5211D2F97BA00F7030C /* QDBTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FDC51F1D2F97BA00F7030C /* QDBTabBarVC.m */; };
@@ -46,7 +49,6 @@
 		A0FDC62A1D2F983600F7030C /* UIView+WZLBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FDC54B1D2F983500F7030C /* UIView+WZLBadge.m */; };
 		A0FDC62B1D2F983600F7030C /* QDBAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FDC5521D2F983500F7030C /* QDBAlert.m */; };
 		A0FDC62C1D2F983600F7030C /* QDBConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FDC5551D2F983500F7030C /* QDBConstant.m */; };
-		A0FDC62D1D2F983600F7030C /* DCSLocalWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FDC5581D2F983500F7030C /* DCSLocalWebViewVC.m */; };
 		A0FDC6331D2F983600F7030C /* QDBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FDC5661D2F983500F7030C /* QDBDataManager.m */; };
 		A0FDC6341D2F983600F7030C /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FDC56A1D2F983500F7030C /* MBProgressHUD+MJ.m */; };
 		A0FDC6351D2F983600F7030C /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0FDC56B1D2F983500F7030C /* MBProgressHUD.bundle */; };
@@ -136,6 +138,8 @@
 		A0504A021D2F8BDE00DF9978 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0504A051D2F8BDE00DF9978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0504A071D2F8BDE00DF9978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A05A93261D50784800601833 /* UIScrollView+TwitterCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TwitterCover.h"; sourceTree = "<group>"; };
+		A05A93271D50784800601833 /* UIScrollView+TwitterCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TwitterCover.m"; sourceTree = "<group>"; };
 		A0D4C3761D4877AE002A2A7F /* qr_scan_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qr_scan_line@2x.png"; sourceTree = "<group>"; };
 		A0D4C3771D4877AE002A2A7F /* qr_scan_line_jd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qr_scan_line_jd@2x.png"; sourceTree = "<group>"; };
 		A0D4C3781D4877AE002A2A7F /* QRTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRTool.h; sourceTree = "<group>"; };
@@ -146,6 +150,10 @@
 		A0D4C37D1D4877AE002A2A7F /* ScanQR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQR.m; sourceTree = "<group>"; };
 		A0D4C3841D4877D4002A2A7F /* TakeInSecretVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeInSecretVC.h; sourceTree = "<group>"; };
 		A0D4C3851D4877D4002A2A7F /* TakeInSecretVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeInSecretVC.m; sourceTree = "<group>"; };
+		A0D4C3881D489463002A2A7F /* DCSLocalWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSLocalWebViewVC.h; sourceTree = "<group>"; };
+		A0D4C3891D489463002A2A7F /* DCSLocalWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSLocalWebViewVC.m; sourceTree = "<group>"; };
+		A0D4C38B1D489492002A2A7F /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
+		A0D4C38C1D489492002A2A7F /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
 		A0FDC5181D2F934400F7030C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0FDC5191D2F934400F7030C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A0FDC51B1D2F948500F7030C /* MyPre.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPre.pch; sourceTree = "<group>"; };
@@ -186,8 +194,6 @@
 		A0FDC5521D2F983500F7030C /* QDBAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBAlert.m; sourceTree = "<group>"; };
 		A0FDC5541D2F983500F7030C /* QDBConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBConstant.h; sourceTree = "<group>"; };
 		A0FDC5551D2F983500F7030C /* QDBConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBConstant.m; sourceTree = "<group>"; };
-		A0FDC5571D2F983500F7030C /* DCSLocalWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSLocalWebViewVC.h; sourceTree = "<group>"; };
-		A0FDC5581D2F983500F7030C /* DCSLocalWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSLocalWebViewVC.m; sourceTree = "<group>"; };
 		A0FDC5621D2F983500F7030C /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		A0FDC5631D2F983500F7030C /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		A0FDC5641D2F983500F7030C /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -472,6 +478,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A05A93251D50784800601833 /* TwitterCover */ = {
+			isa = PBXGroup;
+			children = (
+				A05A93261D50784800601833 /* UIScrollView+TwitterCover.h */,
+				A05A93271D50784800601833 /* UIScrollView+TwitterCover.m */,
+			);
+			path = TwitterCover;
+			sourceTree = "<group>";
+		};
 		A0D4C3741D487785002A2A7F /* Carema */ = {
 			isa = PBXGroup;
 			children = (
@@ -505,6 +520,15 @@
 			path = TakeInSecret;
 			sourceTree = "<group>";
 		};
+		A0D4C3871D489463002A2A7F /* QDBCommonWeb */ = {
+			isa = PBXGroup;
+			children = (
+				A0D4C3881D489463002A2A7F /* DCSLocalWebViewVC.h */,
+				A0D4C3891D489463002A2A7F /* DCSLocalWebViewVC.m */,
+			);
+			path = QDBCommonWeb;
+			sourceTree = "<group>";
+		};
 		A0FDC5171D2F934400F7030C /* GlobalClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,12 +546,13 @@
 		A0FDC5221D2F983500F7030C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A05A93251D50784800601833 /* TwitterCover */,
+				A0D4C3871D489463002A2A7F /* QDBCommonWeb */,
 				A0D4C3741D487785002A2A7F /* Carema */,
 				A0FDC5231D2F983500F7030C /* Extension */,
 				A0FDC54D1D2F983500F7030C /* Macros */,
 				A0FDC5501D2F983500F7030C /* QDBAlert */,
 				A0FDC5531D2F983500F7030C /* QDBConstant */,
-				A0FDC5561D2F983500F7030C /* QDBCordova */,
 				A0FDC5611D2F983500F7030C /* QDBDataManager */,
 				A0FDC5671D2F983500F7030C /* QDBHttpReq */,
 				A0FDC57F1D2F983500F7030C /* QDBInfo */,
@@ -604,6 +629,8 @@
 		A0FDC5351D2F983500F7030C /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
+				A0D4C38B1D489492002A2A7F /* UIImage+Image.h */,
+				A0D4C38C1D489492002A2A7F /* UIImage+Image.m */,
 				A0FDC5361D2F983500F7030C /* UIImage+Water.h */,
 				A0FDC5371D2F983500F7030C /* UIImage+Water.m */,
 			);
@@ -701,15 +728,6 @@
 				A0FDC5551D2F983500F7030C /* QDBConstant.m */,
 			);
 			path = QDBConstant;
-			sourceTree = "<group>";
-		};
-		A0FDC5561D2F983500F7030C /* QDBCordova */ = {
-			isa = PBXGroup;
-			children = (
-				A0FDC5571D2F983500F7030C /* DCSLocalWebViewVC.h */,
-				A0FDC5581D2F983500F7030C /* DCSLocalWebViewVC.m */,
-			);
-			path = QDBCordova;
 			sourceTree = "<group>";
 		};
 		A0FDC5611D2F983500F7030C /* QDBDataManager */ = {
@@ -1266,7 +1284,6 @@
 				A0FDC6421D2F983600F7030C /* INBTripleDES.m in Sources */,
 				A0FDC6291D2F983600F7030C /* CAAnimation+WAnimation.m in Sources */,
 				A0FDC63A1D2F983600F7030C /* MHUploadParam.m in Sources */,
-				A0FDC62D1D2F983600F7030C /* DCSLocalWebViewVC.m in Sources */,
 				A0FDC62C1D2F983600F7030C /* QDBConstant.m in Sources */,
 				A0FDC6221D2F983600F7030C /* UIButton+Corner.m in Sources */,
 				A0FDC6341D2F983600F7030C /* MBProgressHUD+MJ.m in Sources */,
@@ -1282,6 +1299,7 @@
 				A0FDC6481D2F983600F7030C /* IQUITextFieldView+Additions.m in Sources */,
 				A0FDC6531D2F983600F7030C /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				A0FDC62A1D2F983600F7030C /* UIView+WZLBadge.m in Sources */,
+				A0D4C38A1D489463002A2A7F /* DCSLocalWebViewVC.m in Sources */,
 				A0FDC66E1D2F983600F7030C /* UIView+SDExtension.m in Sources */,
 				A0FDC6691D2F983600F7030C /* TAAnimatedDotView.m in Sources */,
 				A0FDC64B1D2F983600F7030C /* IQUIWindow+Hierarchy.m in Sources */,
@@ -1311,6 +1329,7 @@
 				A0D4C3811D4877AE002A2A7F /* QRTool.m in Sources */,
 				A0FDC6521D2F983600F7030C /* IQToolbar.m in Sources */,
 				A0D4C3831D4877AE002A2A7F /* ScanQR.m in Sources */,
+				A05A93281D50784800601833 /* UIScrollView+TwitterCover.m in Sources */,
 				A0FDC6721D2F983600F7030C /* WebViewJavascriptBridgeBase.m in Sources */,
 				A0FDC6681D2F983600F7030C /* TAAbstractDotView.m in Sources */,
 				A0FDC6491D2F983600F7030C /* IQUIView+Hierarchy.m in Sources */,
@@ -1331,6 +1350,7 @@
 				A0FDC6261D2F983600F7030C /* UIView+Extension.m in Sources */,
 				A0FDC62B1D2F983600F7030C /* QDBAlert.m in Sources */,
 				A0FDC66C1D2F983600F7030C /* SDCollectionViewCell.m in Sources */,
+				A0D4C38D1D489492002A2A7F /* UIImage+Image.m in Sources */,
 				A0FDC6411D2F983600F7030C /* INBRSA.m in Sources */,
 				A0FDC51A1D2F934400F7030C /* AppDelegate.m in Sources */,
 				A00F10CF1D45F37D00FFB9F0 /* SecondVC.m in Sources */,
