@@ -344,6 +344,4 @@
 +(NSDictionary *)modifyPublicCard:(NSString *)logGid publicAccount:(NSString *)publicAccount publicAccountBank:(NSString *)publicAccountBank;
 
 
-
-
 @end

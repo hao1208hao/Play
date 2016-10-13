@@ -29,7 +29,7 @@
     
     // 标题
     self.title = @"扫一扫";
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
     [self scanQR];
 
 }
@@ -37,12 +37,11 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTitle:@"返回" target:self action:@selector(clickBack)];
-    
-    
-    UINavigationBar *navBar = [UINavigationBar appearance];
-    [navBar setTintColor:[UIColor blueColor]];
-    [navBar setBarTintColor:[UIColor redColor]];
+//    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTitle:@"返回" target:self action:@selector(clickBack)];   
+//    
+//    UINavigationBar *navBar = [UINavigationBar appearance];
+//    [navBar setTintColor:[UIColor blueColor]];
+//    [navBar setBarTintColor:[UIColor redColor]];
     
 }
 

@@ -142,10 +142,15 @@
                      successBlock:(MHAsiSuccessBlock)successBlock
                      failureBlock:(MHAsiFailureBlock)failureBlock
                           showHUD:(BOOL)showHUD;
+
+
 + (void)postQDurlReqeustWithParams:(NSDictionary*)params
                       successBlock:(MHAsiSuccessBlock)successBlock
                       failureBlock:(MHAsiFailureBlock)failureBlock
                            showHUD:(BOOL)showHUD;
+
+
 +(NSDictionary*)getFinalParamDictWithReq:(NSDictionary*)reqDict andEncryptReq:(NSString*)encryptReq andEncryptKey:(NSString*)encryptKey;
+
 
 @end

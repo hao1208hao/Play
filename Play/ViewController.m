@@ -14,6 +14,7 @@
 #import "ScanQR.h"
 #import "UIImage+Image.h"
 
+
 @interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,scanResultDelegate,getTakeImgDelegate>
 
 /** 最后一次拍照ID */
@@ -25,6 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"X-man";
     
     [self foreach];
 }
@@ -97,7 +100,7 @@
     }else if(tag == 2){
         ScanQR *scan = [[ScanQR alloc]init];
         scan.scanDelegate = self;
-        
+//        [self presentViewController:scan animated:YES completion:nil];
         [self.navigationController pushViewController:scan animated:YES];
     }else if(tag == 3){
         /** 截屏并保存到相册 */
@@ -105,6 +108,7 @@
         UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
         
     }else if(tag == 4){
+       /** 测试Gzip 压缩 */
         
     }else if(tag == 5){
         
