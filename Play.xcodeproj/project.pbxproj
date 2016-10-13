@@ -10,6 +10,7 @@
 		914DBFBE3C01A2AB5794836F /* libPods-Play.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF6A0E04ADE67B19E7A15CD6 /* libPods-Play.a */; };
 		A00376821DAF8A1E009390B8 /* WKDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A003767F1DAF8A1E009390B8 /* WKDelegateController.m */; };
 		A00376831DAF8A1E009390B8 /* WKWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00376811DAF8A1E009390B8 /* WKWebViewVC.m */; };
+		A00376851DAF8AD9009390B8 /* testWKWeb.html in Resources */ = {isa = PBXBuildFile; fileRef = A00376841DAF8AD9009390B8 /* testWKWeb.html */; };
 		A00F10AB1D45B51B00FFB9F0 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F10AA1D45B51B00FFB9F0 /* GuideVC.m */; };
 		A00F10B41D45B82F00FFB9F0 /* btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F10AD1D45B82F00FFB9F0 /* btn@2x.png */; };
 		A00F10B51D45B82F00FFB9F0 /* Guide1-5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F10AE1D45B82F00FFB9F0 /* Guide1-5.jpg */; };
@@ -141,6 +142,7 @@
 		A003767F1DAF8A1E009390B8 /* WKDelegateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKDelegateController.m; sourceTree = "<group>"; };
 		A00376801DAF8A1E009390B8 /* WKWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewVC.h; sourceTree = "<group>"; };
 		A00376811DAF8A1E009390B8 /* WKWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewVC.m; sourceTree = "<group>"; };
+		A00376841DAF8AD9009390B8 /* testWKWeb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = testWKWeb.html; sourceTree = "<group>"; };
 		A00F10A91D45B51B00FFB9F0 /* GuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideVC.h; sourceTree = "<group>"; };
 		A00F10AA1D45B51B00FFB9F0 /* GuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideVC.m; sourceTree = "<group>"; };
 		A00F10AD1D45B82F00FFB9F0 /* btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn@2x.png"; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 		A05049F51D2F8BDE00DF9978 /* Play */ = {
 			isa = PBXGroup;
 			children = (
+				A00376841DAF8AD9009390B8 /* testWKWeb.html */,
 				A0FDC5221D2F983500F7030C /* Utils */,
 				A0FDC5171D2F934400F7030C /* GlobalClass */,
 				A05049FC1D2F8BDE00DF9978 /* ViewController.h */,
@@ -1192,6 +1195,7 @@
 				A0504A061D2F8BDE00DF9978 /* LaunchScreen.storyboard in Resources */,
 				A0FDC6761D2F983600F7030C /* README.txt in Resources */,
 				A0D4C3801D4877AE002A2A7F /* qr_scan_line_jd@2x.png in Resources */,
+				A00376851DAF8AD9009390B8 /* testWKWeb.html in Resources */,
 				A0FDC6671D2F983600F7030C /* Resoure.bundle in Resources */,
 				A0FDC6751D2F983600F7030C /* read_me.txt in Resources */,
 				A00F10B41D45B82F00FFB9F0 /* btn@2x.png in Resources */,

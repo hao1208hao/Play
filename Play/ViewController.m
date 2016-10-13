@@ -14,8 +14,10 @@
 #import "ScanQR.h"
 #import "UIImage+Image.h"
 
+#import <WebKit/WKWebView.h>
+#import "WKWebViewVC.h"
 
-@interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,scanResultDelegate,getTakeImgDelegate>
+@interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,scanResultDelegate,getTakeImgDelegate,WKWebDelegate>
 
 /** 最后一次拍照ID */
 @property(nonatomic,assign) NSInteger lastTakePicID;
@@ -111,6 +113,15 @@
        /** 测试Gzip 压缩 */
         
     }else if(tag == 5){
+        /** 测试WKWebView */
+        
+        WKWebViewVC* wk = [[WKWebViewVC alloc]init];
+        /** 往项目中存储了一个网页文件 */
+        wk.loadURL = @"http://192.168.208.156/testWKWeb.html";
+        NSMutableArray* arr = [NSMutableArray arrayWithArray:@[@"loginAction",@"closeCurrPage"]];
+        wk.jsFunName = arr;
+        wk.wkWebDelegate = self;
+        [self presentViewController:wk animated:YES completion:nil];
         
     }else if(tag == 6){
         
@@ -122,6 +133,47 @@
         
     }
 }
+
+#pragma mark - wkWebDelegate
+#pragma mark
+
+-(void)getJSInfoWithJSFunctionName:(NSString *)jsFunctionName andJsReqData:(NSMutableDictionary *)reqDict{
+    if([jsFunctionName isEqualToString:@"loginAction"]){
+        NSString* name = reqDict[@"userName"];
+        NSString* pwd = reqDict[@"userPwd"];
+        
+        if ([name isEqualToString:@"1"] && [pwd isEqualToString:@"1"]) {
+            // 登录成功
+            UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"测试" message:@"登录成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+        }else{
+            // 登录失败
+            UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"测试" message:@"登录失败" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }else if([jsFunctionName isEqualToString:@"closeCurrPage"]){
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+/** 确认弹窗 */
+-(void)getWebConfirmContent:(BOOL)webConfirmResult{
+    NSString* msg = @"";
+    if (webConfirmResult) {
+        msg = @"点击了确定";
+    }else{
+        msg = @"点击了取消";
+    }
+    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"提示" message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+}
+
+/** 带文本框的弹窗 */
+-(void)getWebPromptContent:(NSString *)webPromptContent{
+    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"提示" message:[NSString stringWithFormat:@"文本框输入的内容是:%@",webPromptContent] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+}
+
 
 // 监听保存完成，必须实现这个方法
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo

@@ -28,6 +28,8 @@
 
 @interface WKWebViewVC : UIViewController
 
+/** 请求加载的文件,优先访问本地文件 */
+@property(nonatomic,strong) NSString* loadFileURL;
 /** 请求加载的地址 */
 @property(nonatomic,strong) NSString* loadURL;
 

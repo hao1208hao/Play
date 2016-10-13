@@ -48,6 +48,11 @@
     _wk.navigationDelegate = self;
     [self.view addSubview:_wk];
     
+    if (self.loadFileURL.length>0) {
+        [_wk loadFileURL:[NSURL fileURLWithPath:self.loadFileURL] allowingReadAccessToURL:[NSURL URLWithString:self.loadURL]];
+        return;
+    }
+    
     [_wk loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.loadURL]]];
 }
 
