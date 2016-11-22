@@ -17,6 +17,8 @@
 #import <WebKit/WKWebView.h>
 #import "WKWebViewVC.h"
 
+#import "convertGB_BIG.h"
+
 @interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,scanResultDelegate,getTakeImgDelegate,WKWebDelegate>
 
 /** 最后一次拍照ID */
@@ -54,7 +56,7 @@
 }
 
 -(void)foreach{
-    NSArray* titleArr = @[@"拍照",@"生成二维码",@"扫一扫",@"截屏",@"微信朋友圈",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ"];
+    NSArray* titleArr = @[@"拍照",@"生成二维码",@"扫一扫",@"截屏",@"测试Gzip",@"wkwebView",@"简体转繁体",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ"];
     
     int col = 5;//列
     int row = titleArr.count/col; //行
@@ -124,7 +126,8 @@
         [self presentViewController:wk animated:YES completion:nil];
         
     }else if(tag == 6){
-        
+        NSString* zh_hant = [[convertGB_BIG new] gbToBig5:@"首页"];
+        NSLog(@"繁体字是：%@", zh_hant);
     }else if(tag == 7){
         
     }else if(tag == 8){

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		914DBFBE3C01A2AB5794836F /* libPods-Play.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF6A0E04ADE67B19E7A15CD6 /* libPods-Play.a */; };
+		9D6AB41E1DE3EF5100C8C394 /* big5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D6AB4171DE3EF5100C8C394 /* big5.txt */; };
+		9D6AB41F1DE3EF5100C8C394 /* faces.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D6AB4181DE3EF5100C8C394 /* faces.txt */; };
+		9D6AB4201DE3EF5100C8C394 /* gb.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D6AB4191DE3EF5100C8C394 /* gb.txt */; };
+		9D6AB4211DE3EF5100C8C394 /* hot.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D6AB41A1DE3EF5100C8C394 /* hot.txt */; };
+		9D6AB4221DE3EF5100C8C394 /* split.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D6AB41B1DE3EF5100C8C394 /* split.txt */; };
+		9D6AB4231DE3EF5100C8C394 /* convertGB_BIG.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6AB41D1DE3EF5100C8C394 /* convertGB_BIG.m */; };
 		A00376821DAF8A1E009390B8 /* WKDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A003767F1DAF8A1E009390B8 /* WKDelegateController.m */; };
 		A00376831DAF8A1E009390B8 /* WKWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00376811DAF8A1E009390B8 /* WKWebViewVC.m */; };
 		A00376851DAF8AD9009390B8 /* testWKWeb.html in Resources */ = {isa = PBXBuildFile; fileRef = A00376841DAF8AD9009390B8 /* testWKWeb.html */; };
@@ -27,7 +33,6 @@
 		A0504A031D2F8BDE00DF9978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0504A021D2F8BDE00DF9978 /* Assets.xcassets */; };
 		A0504A061D2F8BDE00DF9978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0504A041D2F8BDE00DF9978 /* LaunchScreen.storyboard */; };
 		A05A93281D50784800601833 /* UIScrollView+TwitterCover.m in Sources */ = {isa = PBXBuildFile; fileRef = A05A93271D50784800601833 /* UIScrollView+TwitterCover.m */; };
-		A05BEFB11D80093D003EE6CD /* JizhanJianxiu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A05BEFAE1D80087D003EE6CD /* JizhanJianxiu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0D4C37F1D4877AE002A2A7F /* qr_scan_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D4C3761D4877AE002A2A7F /* qr_scan_line@2x.png */; };
 		A0D4C3801D4877AE002A2A7F /* qr_scan_line_jd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D4C3771D4877AE002A2A7F /* qr_scan_line_jd@2x.png */; };
 		A0D4C3811D4877AE002A2A7F /* QRTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D4C3791D4877AE002A2A7F /* QRTool.m */; };
@@ -122,22 +127,15 @@
 		A0FDC68D1D2F9D2600F7030C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FDC68C1D2F9D2600F7030C /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		A05BEFB21D80093D003EE6CD /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A05BEFB11D80093D003EE6CD /* JizhanJianxiu.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		8F98F1468FC2F0A7B58FC7E2 /* Pods-Play.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Play.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Play/Pods-Play.debug.xcconfig"; sourceTree = "<group>"; };
+		9D6AB4171DE3EF5100C8C394 /* big5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = big5.txt; sourceTree = "<group>"; };
+		9D6AB4181DE3EF5100C8C394 /* faces.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = faces.txt; sourceTree = "<group>"; };
+		9D6AB4191DE3EF5100C8C394 /* gb.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gb.txt; sourceTree = "<group>"; };
+		9D6AB41A1DE3EF5100C8C394 /* hot.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hot.txt; sourceTree = "<group>"; };
+		9D6AB41B1DE3EF5100C8C394 /* split.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = split.txt; sourceTree = "<group>"; };
+		9D6AB41C1DE3EF5100C8C394 /* convertGB_BIG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convertGB_BIG.h; sourceTree = "<group>"; };
+		9D6AB41D1DE3EF5100C8C394 /* convertGB_BIG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = convertGB_BIG.m; sourceTree = "<group>"; };
 		A003767E1DAF8A1E009390B8 /* WKDelegateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKDelegateController.h; sourceTree = "<group>"; };
 		A003767F1DAF8A1E009390B8 /* WKDelegateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKDelegateController.m; sourceTree = "<group>"; };
 		A00376801DAF8A1E009390B8 /* WKWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewVC.h; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 		A0504A071D2F8BDE00DF9978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A05A93261D50784800601833 /* UIScrollView+TwitterCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TwitterCover.h"; sourceTree = "<group>"; };
 		A05A93271D50784800601833 /* UIScrollView+TwitterCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TwitterCover.m"; sourceTree = "<group>"; };
-		A05BEFAE1D80087D003EE6CD /* JizhanJianxiu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JizhanJianxiu.framework; path = /Users/administrator/Documents/Play/JizhanJianxiu.framework; sourceTree = "<absolute>"; };
 		A0D4C3761D4877AE002A2A7F /* qr_scan_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qr_scan_line@2x.png"; sourceTree = "<group>"; };
 		A0D4C3771D4877AE002A2A7F /* qr_scan_line_jd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qr_scan_line_jd@2x.png"; sourceTree = "<group>"; };
 		A0D4C3781D4877AE002A2A7F /* QRTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRTool.h; sourceTree = "<group>"; };
@@ -408,6 +405,28 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9D6AB4151DE3EF5100C8C394 /* ConvertUtil */ = {
+			isa = PBXGroup;
+			children = (
+				9D6AB4161DE3EF5100C8C394 /* ConverResource */,
+				9D6AB41C1DE3EF5100C8C394 /* convertGB_BIG.h */,
+				9D6AB41D1DE3EF5100C8C394 /* convertGB_BIG.m */,
+			);
+			path = ConvertUtil;
+			sourceTree = "<group>";
+		};
+		9D6AB4161DE3EF5100C8C394 /* ConverResource */ = {
+			isa = PBXGroup;
+			children = (
+				9D6AB4171DE3EF5100C8C394 /* big5.txt */,
+				9D6AB4181DE3EF5100C8C394 /* faces.txt */,
+				9D6AB4191DE3EF5100C8C394 /* gb.txt */,
+				9D6AB41A1DE3EF5100C8C394 /* hot.txt */,
+				9D6AB41B1DE3EF5100C8C394 /* split.txt */,
+			);
+			path = ConverResource;
+			sourceTree = "<group>";
+		};
 		A003767D1DAF8A1E009390B8 /* WKWebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -566,6 +585,7 @@
 		A0FDC5221D2F983500F7030C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9D6AB4151DE3EF5100C8C394 /* ConvertUtil */,
 				A003767D1DAF8A1E009390B8 /* WKWebView */,
 				A05A93251D50784800601833 /* TwitterCover */,
 				A0D4C3871D489463002A2A7F /* QDBCommonWeb */,
@@ -1142,7 +1162,6 @@
 				A05049F11D2F8BDE00DF9978 /* Resources */,
 				819BC625909DDD69EEBF70D1 /* [CP] Embed Pods Frameworks */,
 				3129D213CC95BE4BD1D0CACA /* [CP] Copy Pods Resources */,
-				A05BEFB21D80093D003EE6CD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1164,6 +1183,7 @@
 				TargetAttributes = {
 					A05049F21D2F8BDE00DF9978 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 3795HA7358;
 					};
 				};
 			};
@@ -1190,21 +1210,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6AB4211DE3EF5100C8C394 /* hot.txt in Resources */,
 				A00F10B91D45B82F00FFB9F0 /* Guide3-5.jpg in Resources */,
 				A0FDC6541D2F983600F7030C /* IQKeyboardManager.bundle in Resources */,
 				A0504A061D2F8BDE00DF9978 /* LaunchScreen.storyboard in Resources */,
+				9D6AB4221DE3EF5100C8C394 /* split.txt in Resources */,
 				A0FDC6761D2F983600F7030C /* README.txt in Resources */,
 				A0D4C3801D4877AE002A2A7F /* qr_scan_line_jd@2x.png in Resources */,
 				A00376851DAF8AD9009390B8 /* testWKWeb.html in Resources */,
 				A0FDC6671D2F983600F7030C /* Resoure.bundle in Resources */,
 				A0FDC6751D2F983600F7030C /* read_me.txt in Resources */,
 				A00F10B41D45B82F00FFB9F0 /* btn@2x.png in Resources */,
+				9D6AB41F1DE3EF5100C8C394 /* faces.txt in Resources */,
 				A0FDC6351D2F983600F7030C /* MBProgressHUD.bundle in Resources */,
 				A0FDC6701D2F983600F7030C /* WebViewJavascriptBridge.js.txt in Resources */,
 				A00F10B51D45B82F00FFB9F0 /* Guide1-5.jpg in Resources */,
 				A0FDC6621D2F983600F7030C /* JCAlertView.bundle in Resources */,
+				9D6AB41E1DE3EF5100C8C394 /* big5.txt in Resources */,
 				A00F10B81D45B82F00FFB9F0 /* Guide2.jpg in Resources */,
 				A0D4C37F1D4877AE002A2A7F /* qr_scan_line@2x.png in Resources */,
+				9D6AB4201DE3EF5100C8C394 /* gb.txt in Resources */,
 				A0504A031D2F8BDE00DF9978 /* Assets.xcassets in Resources */,
 				A00F10B71D45B82F00FFB9F0 /* Guide2-5.jpg in Resources */,
 				A0504A011D2F8BDE00DF9978 /* Main.storyboard in Resources */,
@@ -1301,6 +1326,7 @@
 				A0D4C3861D4877D4002A2A7F /* TakeInSecretVC.m in Sources */,
 				A0FDC66A1D2F983600F7030C /* TADotView.m in Sources */,
 				A0FDC6441D2F983600F7030C /* NSString+INB.m in Sources */,
+				9D6AB4231DE3EF5100C8C394 /* convertGB_BIG.m in Sources */,
 				A0FDC6771D2F983600F7030C /* UIBarButtonItem+WZLBadge.m in Sources */,
 				A0FDC6501D2F983600F7030C /* IQPreviousNextView.m in Sources */,
 				A0FDC6781D2F983600F7030C /* UITabBarItem+WZLBadge.m in Sources */,
@@ -1465,6 +1491,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zhonghua Wei (547346FZJW)";
+				DEVELOPMENT_TEAM = 3795HA7358;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Play/Utils/Third/UMeng",
@@ -1483,7 +1510,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiandai.play;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "68ce484f-8652-4d77-bec9-094ad41d1fff";
+				PROVISIONING_PROFILE = "b44c1537-9646-41e6-ae9a-cd2fed29f853";
+				PROVISIONING_PROFILE_SPECIFIER = DCS_Custom;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
