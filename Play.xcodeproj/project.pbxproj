@@ -14,6 +14,7 @@
 		9D6AB4211DE3EF5100C8C394 /* hot.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D6AB41A1DE3EF5100C8C394 /* hot.txt */; };
 		9D6AB4221DE3EF5100C8C394 /* split.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D6AB41B1DE3EF5100C8C394 /* split.txt */; };
 		9D6AB4231DE3EF5100C8C394 /* convertGB_BIG.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6AB41D1DE3EF5100C8C394 /* convertGB_BIG.m */; };
+		9D6AB4701DE684F100C8C394 /* QDBAuthCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6AB46F1DE684F100C8C394 /* QDBAuthCode.m */; };
 		A00376821DAF8A1E009390B8 /* WKDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A003767F1DAF8A1E009390B8 /* WKDelegateController.m */; };
 		A00376831DAF8A1E009390B8 /* WKWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00376811DAF8A1E009390B8 /* WKWebViewVC.m */; };
 		A00376851DAF8AD9009390B8 /* testWKWeb.html in Resources */ = {isa = PBXBuildFile; fileRef = A00376841DAF8AD9009390B8 /* testWKWeb.html */; };
@@ -136,6 +137,8 @@
 		9D6AB41B1DE3EF5100C8C394 /* split.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = split.txt; sourceTree = "<group>"; };
 		9D6AB41C1DE3EF5100C8C394 /* convertGB_BIG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convertGB_BIG.h; sourceTree = "<group>"; };
 		9D6AB41D1DE3EF5100C8C394 /* convertGB_BIG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = convertGB_BIG.m; sourceTree = "<group>"; };
+		9D6AB46E1DE684F100C8C394 /* QDBAuthCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBAuthCode.h; sourceTree = "<group>"; };
+		9D6AB46F1DE684F100C8C394 /* QDBAuthCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBAuthCode.m; sourceTree = "<group>"; };
 		A003767E1DAF8A1E009390B8 /* WKDelegateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKDelegateController.h; sourceTree = "<group>"; };
 		A003767F1DAF8A1E009390B8 /* WKDelegateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKDelegateController.m; sourceTree = "<group>"; };
 		A00376801DAF8A1E009390B8 /* WKWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewVC.h; sourceTree = "<group>"; };
@@ -837,6 +840,8 @@
 		A0FDC57F1D2F983500F7030C /* QDBInfo */ = {
 			isa = PBXGroup;
 			children = (
+				9D6AB46E1DE684F100C8C394 /* QDBAuthCode.h */,
+				9D6AB46F1DE684F100C8C394 /* QDBAuthCode.m */,
 				A0FDC5801D2F983500F7030C /* QDBInfo.h */,
 				A0FDC5811D2F983500F7030C /* QDBInfo.m */,
 			);
@@ -1342,6 +1347,7 @@
 				A0FDC6651D2F983600F7030C /* GTMBase64.m in Sources */,
 				A0FDC6461D2F983600F7030C /* IQNSArray+Sort.m in Sources */,
 				A0D4C3811D4877AE002A2A7F /* QRTool.m in Sources */,
+				9D6AB4701DE684F100C8C394 /* QDBAuthCode.m in Sources */,
 				A0FDC6521D2F983600F7030C /* IQToolbar.m in Sources */,
 				A00376821DAF8A1E009390B8 /* WKDelegateController.m in Sources */,
 				A0D4C3831D4877AE002A2A7F /* ScanQR.m in Sources */,

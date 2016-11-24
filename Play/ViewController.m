@@ -18,6 +18,7 @@
 #import "WKWebViewVC.h"
 
 #import "convertGB_BIG.h"
+#import "QDBAuthCode.h"   //本地生成验证码
 
 @interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,scanResultDelegate,getTakeImgDelegate,WKWebDelegate>
 
@@ -56,7 +57,7 @@
 }
 
 -(void)foreach{
-    NSArray* titleArr = @[@"拍照",@"生成二维码",@"扫一扫",@"截屏",@"测试Gzip",@"wkwebView",@"简体转繁体",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ"];
+    NSArray* titleArr = @[@"拍照",@"生成二维码",@"扫一扫",@"截屏",@"测试Gzip",@"wkwebView",@"简体转繁体",@"验证码",@"微信朋友圈",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ"];
     
     int col = 5;//列
     int row = titleArr.count/col; //行
@@ -129,7 +130,10 @@
         NSString* zh_hant = [[convertGB_BIG new] gbToBig5:@"首页"];
         NSLog(@"繁体字是：%@", zh_hant);
     }else if(tag == 7){
-        
+        //本地生成验证码
+        QDBAuthCode* authCodeV = [[QDBAuthCode alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-100)/2, 450, 100, 40)];
+        authCodeV.layer.cornerRadius = 5;
+        [self.view addSubview:authCodeV];
     }else if(tag == 8){
         
     }else if(tag == 9){
