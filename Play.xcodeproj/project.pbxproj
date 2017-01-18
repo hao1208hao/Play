@@ -15,6 +15,7 @@
 		9D6AB4221DE3EF5100C8C394 /* split.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D6AB41B1DE3EF5100C8C394 /* split.txt */; };
 		9D6AB4231DE3EF5100C8C394 /* convertGB_BIG.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6AB41D1DE3EF5100C8C394 /* convertGB_BIG.m */; };
 		9D6AB4701DE684F100C8C394 /* QDBAuthCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6AB46F1DE684F100C8C394 /* QDBAuthCode.m */; };
+		9DC473F71E2F17140023D40D /* rec@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC473F61E2F17140023D40D /* rec@2x.png */; };
 		A00376821DAF8A1E009390B8 /* WKDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A003767F1DAF8A1E009390B8 /* WKDelegateController.m */; };
 		A00376831DAF8A1E009390B8 /* WKWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00376811DAF8A1E009390B8 /* WKWebViewVC.m */; };
 		A00376851DAF8AD9009390B8 /* testWKWeb.html in Resources */ = {isa = PBXBuildFile; fileRef = A00376841DAF8AD9009390B8 /* testWKWeb.html */; };
@@ -139,6 +140,7 @@
 		9D6AB41D1DE3EF5100C8C394 /* convertGB_BIG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = convertGB_BIG.m; sourceTree = "<group>"; };
 		9D6AB46E1DE684F100C8C394 /* QDBAuthCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBAuthCode.h; sourceTree = "<group>"; };
 		9D6AB46F1DE684F100C8C394 /* QDBAuthCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBAuthCode.m; sourceTree = "<group>"; };
+		9DC473F61E2F17140023D40D /* rec@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rec@2x.png"; sourceTree = "<group>"; };
 		A003767E1DAF8A1E009390B8 /* WKDelegateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKDelegateController.h; sourceTree = "<group>"; };
 		A003767F1DAF8A1E009390B8 /* WKDelegateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKDelegateController.m; sourceTree = "<group>"; };
 		A00376801DAF8A1E009390B8 /* WKWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewVC.h; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 		A05049F61D2F8BDE00DF9978 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9DC473F61E2F17140023D40D /* rec@2x.png */,
 				A0FDC51B1D2F948500F7030C /* MyPre.pch */,
 				A05049FF1D2F8BDE00DF9978 /* Main.storyboard */,
 				A0504A021D2F8BDE00DF9978 /* Assets.xcassets */,
@@ -1226,6 +1229,7 @@
 				A0FDC6671D2F983600F7030C /* Resoure.bundle in Resources */,
 				A0FDC6751D2F983600F7030C /* read_me.txt in Resources */,
 				A00F10B41D45B82F00FFB9F0 /* btn@2x.png in Resources */,
+				9DC473F71E2F17140023D40D /* rec@2x.png in Resources */,
 				9D6AB41F1DE3EF5100C8C394 /* faces.txt in Resources */,
 				A0FDC6351D2F983600F7030C /* MBProgressHUD.bundle in Resources */,
 				A0FDC6701D2F983600F7030C /* WebViewJavascriptBridge.js.txt in Resources */,

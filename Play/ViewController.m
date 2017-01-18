@@ -57,7 +57,7 @@
 }
 
 -(void)foreach{
-    NSArray* titleArr = @[@"拍照",@"生成二维码",@"扫一扫",@"截屏",@"测试Gzip",@"wkwebView",@"简体转繁体",@"验证码",@"微信朋友圈",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ"];
+    NSArray* titleArr = @[@"拍照",@"生成二维码",@"扫一扫",@"截屏",@"测试Gzip",@"wkwebView",@"简体转繁体",@"验证码",@"识别二维码",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ"];
     
     int col = 5;//列
     int row = titleArr.count/col; //行
@@ -96,7 +96,7 @@
 //    [self startSystemCamera];
 //    return;
     if (tag == 0) {
-        [self take];
+        [self take];   //偷拍
     }else if(tag == 1){
         UIImage* img =[QRTool createQRImgWithContent:@"http://www.baidu.com" imgSize:200];
         UIImageView* imgV = [[UIImageView alloc]initWithImage:img];
@@ -119,6 +119,7 @@
         /** 测试WKWebView */
         WKWebViewVC* wk = [[WKWebViewVC alloc]init];
         /** 往项目中存储了一个网页文件 */
+        wk.loadLocalHtmlFile = @"testWKWeb";   //传文件名
         wk.loadURL = @"http://192.168.208.156/testWKWeb.html";
         NSMutableArray* arr = [NSMutableArray arrayWithArray:@[@"loginAction",@"closeCurrPage"]];
         wk.jsFunName = arr;
@@ -134,7 +135,12 @@
         authCodeV.layer.cornerRadius = 5;
         [self.view addSubview:authCodeV];
     }else if(tag == 8){
-        
+        //识别二维码
+        UIImage* img = [UIImage imageNamed:@"rec"];
+        //最低系统版本要求  8.0
+        NSString* result = [QRTool recognizeImgWithImage:img];
+        UIAlertView* alert =[[UIAlertView alloc]initWithTitle:@"识别结果" message:result delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+        [alert show];
     }else if(tag == 9){
         
     }

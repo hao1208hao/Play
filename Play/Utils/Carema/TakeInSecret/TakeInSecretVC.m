@@ -9,7 +9,7 @@
 #import "TakeInSecretVC.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface TakeInSecretVC ()<AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface TakeInSecretVC ()<AVCaptureVideoDataOutputSampleBufferDelegate,UIAlertViewDelegate>
 
 
 @property(nonatomic,strong) AVCaptureSession* session;
@@ -39,7 +39,8 @@
         //未决定
     }else{
         /** 已拒绝授权 */
-        return;
+        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"当前没有权限使用相机,是否前往更改权限?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alert show];
     }
     
     
@@ -76,8 +77,20 @@
     [_session addOutput:videoOutput];
     
     [_session startRunning];
-    
-    
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        //点击了取消
+        //[self.navigationController popViewControllerAnimated:YES];
+    }else if(buttonIndex == 1){
+        if ([[[UIDevice currentDevice]systemVersion]floatValue]>=8.0) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+        }else{
+            NSURL*url=[NSURL URLWithString:@"prefs:root=Privacy"];
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    }
 }
 
 /** 关闭 */
