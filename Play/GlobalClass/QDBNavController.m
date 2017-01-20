@@ -32,6 +32,8 @@
 //    [navBar setBackgroundImage:img forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     
     [navBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [navBar setBarTintColor:[UIColor redColor]];
+    
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     [navBar setShadowImage:[UIImage new]];
     attrs[NSForegroundColorAttributeName] = NavBarTitleColor;
