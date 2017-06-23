@@ -7,7 +7,7 @@
 //
 
 #import "WKWebViewVC.h"
-#import <WebKit/WKWebView.h>
+
 #import <WebKit/WKUserContentController.h>
 #import <WebKit/WKWebViewConfiguration.h>
 #import "WKDelegateController.h"
@@ -88,8 +88,8 @@
       3. message.frameInfo    对应js webView信息
      */
     
-    if ([self.wkWebDelegate respondsToSelector:@selector(getJSInfoWithJSFunctionName:andJsReqData:)]) {
-        [self.wkWebDelegate getJSInfoWithJSFunctionName:message.name andJsReqData:message.body];
+    if ([self.wkWebDelegate respondsToSelector:@selector(getJSInfoWithJSFunctionName:andJsReqData: andWkWebView:)]) {
+        [self.wkWebDelegate getJSInfoWithJSFunctionName:message.name andJsReqData:message.body andWkWebView:_wk];
     }    
 }
 

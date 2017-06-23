@@ -143,13 +143,95 @@
         [alert show];
     }else if(tag == 9){
         
+        NSArray* arr = @[@[@"1",@"2"],@[@"a",@"b"],@[@"3",@"4",@"5"],@[@"c",@"d",@"e"]];
+        
+        
+        int total = 1;
+        //计算笛卡尔积最后一维数组元素个数
+        for (int i=0;i<arr.count;i++) {
+            NSArray* a =arr[i];
+            total *= a.count;
+        }
+        
+        
+        NSMutableDictionary* myResult = [[NSMutableDictionary alloc]init];
+        
+        int itemLoopNum = 1;
+        int loopPerItem = 1;
+        int now = 1;
+        for (int x=0;x<arr.count;x++) {
+            NSArray* b = arr[x];
+            now *= b.count;
+            
+            int index = 0;
+            int currentSize = b.count;  //2 2 3 3
+            
+            itemLoopNum = total / now;  //18 9 3 1
+            loopPerItem = total / (itemLoopNum * currentSize); //1 2 4 12
+            
+            int myIndex = 0;
+            
+            for (int y=0;y<b.count;y++) {  //当前数组元素循环个数次 2 2 3 3
+                for (int i = 0; i < loopPerItem; i++) {  //1 2 4 12 该数组每个元素需要重复循环的次数
+                    if (myIndex == b.count) {  //每个数组循环完一次后重新循环
+                        myIndex = 0;
+                    }
+                    
+                    for (int j = 0; j < itemLoopNum; j++) {  //18 9 3 1 //每个元素每次循环次数
+                        NSString* str = @"";
+                        if(myResult.count>index){
+                            str = [NSString stringWithFormat:@"%@,%@",myResult[[NSString stringWithFormat:@"%d",index]],b[myIndex]];
+                        }else{
+                            str = [NSString stringWithFormat:@"%@",b[myIndex]];
+                        }
+                        
+                        [myResult setObject:str forKey:[NSString stringWithFormat:@"%d",index]];
+                        
+                        
+                        index++;
+                        
+                    }
+                    myIndex++;
+                }  
+                
+            }  
+            
+            
+        }  
+        
+        NSLog(@"========%@",myResult);
+        
+    }else  if(tag == 10){
+       
+    }
+}
+
+-(void)combine:(NSMutableArray *)result data:(NSArray *)data curr:(int)currIndex count:(int)count{
+    
+    if (currIndex == count) {
+        //[_combinationArr addObject:[result mutableCopy]];
+        [result removeLastObject];
+    }else {
+        NSArray* array = [data objectAtIndex:currIndex];
+        
+        for (int i = 0; i < array.count; ++i) {
+            
+            [result addObject:[array objectAtIndex:i]];
+            //进入递归循环
+            [self combine:result data:data curr:currIndex+1 count:count];
+            
+            if ((i+1 == array.count) && (currIndex-1>=0)) {
+                
+                [result removeObjectAtIndex:currIndex-1];
+            }
+        }
     }
 }
 
 #pragma mark - wkWebDelegate
 #pragma mark
 
--(void)getJSInfoWithJSFunctionName:(NSString *)jsFunctionName andJsReqData:(NSMutableDictionary *)reqDict{
+-(void)getJSInfoWithJSFunctionName:(NSString *)jsFunctionName andJsReqData:(NSMutableDictionary *)reqDict andWkWebView:(WKWebView *)wk{
     if([jsFunctionName isEqualToString:@"loginAction"]){
         NSString* name = reqDict[@"userName"];
         NSString* pwd = reqDict[@"userPwd"];
@@ -158,6 +240,13 @@
             // 登录成功
             UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"测试" message:@"登录成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [alert show];
+            //调用网页js方法
+            /*
+            [wk evaluateJavaScript:@"alertMobile()" completionHandler:^(id _Nullable response, NSError * _Nullable error) {
+                //TODO
+                NSLog(@"%@ %@",response,error);
+            }];
+            */
         }else{
             // 登录失败
             UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"测试" message:@"登录失败" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];

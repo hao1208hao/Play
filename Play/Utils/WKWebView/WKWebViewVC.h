@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WKWebView.h>
 
 @protocol WKWebDelegate <NSObject>
 
 @required
 /** oc与js 交互 */
--(void)getJSInfoWithJSFunctionName:(NSString*)jsFunctionName andJsReqData:(NSMutableDictionary*)reqDict;
+-(void)getJSInfoWithJSFunctionName:(NSString*)jsFunctionName andJsReqData:(NSMutableDictionary*)reqDict andWkWebView:(WKWebView*)wk;
 
 @optional
 /** 网页弹窗内容（网页使用alert方法） */
