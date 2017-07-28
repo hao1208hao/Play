@@ -16,6 +16,9 @@
 
 /** WKWebView对象 */
 @property(nonatomic,strong) WKWebView* wk;
+
+@property(nonatomic,strong) UIProgressView* progressView;
+
 @property(nonatomic,strong) WKUserContentController* userContentController;
 
 @end
@@ -43,10 +46,15 @@
         [_userContentController addScriptMessageHandler:self name:self.jsFunName[i]]; //注册一个name为sayhello的js方法
     }
     
-    _wk = [[WKWebView alloc] initWithFrame:CGRectMake(0, 50, 320, 500) configuration:configuration];
+    _wk = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
     _wk.UIDelegate = self;
     _wk.navigationDelegate = self;
     [self.view addSubview:_wk];
+    
+    self.progressView = [[UIProgressView alloc]initWithFrame:CGRectMake(0, 65, SCREEN_WIDTH, 2)];
+    [self.view addSubview:self.progressView];
+    
+    [self.wk addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
     
     if (self.loadLocalHtmlFile.length>0) {
         //http://www.jianshu.com/p/ccb421c85b2e  参考链接
@@ -73,7 +81,27 @@
     }
 }
 
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    
+    if([keyPath isEqualToString:@"estimatedProgress"] && object == self.wk){
+        [self.progressView setAlpha:1.0];
+        [self.progressView setProgress:self.wk.estimatedProgress animated:YES];
+        if (self.wk.estimatedProgress>=1.0) {
+            [UIView animateWithDuration:0.3 delay:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                [self.progressView setAlpha:0.0f];
+            } completion:^(BOOL finished) {
+                [self.progressView setProgress:0.0 animated:NO];
+            }];
+        }
+    }else{
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
 - (void)dealloc{
+    
+    [self.wk removeObserver:self forKeyPath:@"estimatedProgress"];
+    
     //这里需要注意，前面增加过的方法一定要remove掉。
     for (int i=0; i<self.jsFunName.count; i++) {
         [_userContentController removeScriptMessageHandlerForName:self.jsFunName[i]]; //这里需要注意，前面增加过的方法一定要remove掉。

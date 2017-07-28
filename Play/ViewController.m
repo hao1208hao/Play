@@ -90,6 +90,15 @@
     }
 }
 
+-(void)test:(UILongPressGestureRecognizer*)ss{
+    
+    UIImageView* imgv = (UIImageView*)ss.view;
+    
+    NSString* result = [QRTool recognizeImgWithImage:imgv.image];
+    UIAlertView* alert =[[UIAlertView alloc]initWithTitle:@"识别结果" message:result delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+    [alert show];
+}
+
 -(void)btnClick:(UIButton*)btn{
     NSInteger tag = btn.tag;
     self.lastTakePicID = tag;
@@ -102,6 +111,13 @@
         UIImageView* imgV = [[UIImageView alloc]initWithImage:img];
         [imgV setFrame:CGRectMake(50, 100, 200, 200)];
         [self.view addSubview:imgV];
+        
+        //长按手势
+        [imgV setUserInteractionEnabled:YES];
+        UILongPressGestureRecognizer* longT = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(test:)];
+        [imgV addGestureRecognizer:longT];
+        
+        
     }else if(tag == 2){
         ScanQR *scan = [[ScanQR alloc]init];
         scan.scanDelegate = self;
