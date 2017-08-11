@@ -97,6 +97,8 @@
     NSString* result = [QRTool recognizeImgWithImage:imgv.image];
     UIAlertView* alert =[[UIAlertView alloc]initWithTitle:@"识别结果" message:result delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
     [alert show];
+    
+    [imgv removeFromSuperview];
 }
 
 -(void)btnClick:(UIButton*)btn{
@@ -107,7 +109,13 @@
     if (tag == 0) {
         [self take];   //偷拍
     }else if(tag == 1){
-        UIImage* img =[QRTool createQRImgWithContent:@"http://www.baidu.com" imgSize:200];
+        
+        NSArray* qrArr = @[@"能不能借我 5k 块钱?",@"能不能借我 1w 块钱?",@"能不能借我 1.5w 块钱?",@"能不能借我 2w 块钱?",@"能不能借我 2.5w 块钱?",@"能不能借我 3w 块钱?",@"能不能借我 3.5w 块钱?",@"能不能借我 4w 块钱?",];
+        
+        int i =  arc4random() % 8;
+        NSString* str = qrArr[i];
+        
+        UIImage* img =[QRTool createQRImgWithContent:str imgSize:200];
         UIImageView* imgV = [[UIImageView alloc]initWithImage:img];
         [imgV setFrame:CGRectMake(50, 100, 200, 200)];
         [self.view addSubview:imgV];
@@ -115,6 +123,7 @@
         //长按手势
         [imgV setUserInteractionEnabled:YES];
         UILongPressGestureRecognizer* longT = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(test:)];
+        [longT setNumberOfTouchesRequired:1];
         [imgV addGestureRecognizer:longT];
         
         
