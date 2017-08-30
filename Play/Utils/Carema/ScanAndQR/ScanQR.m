@@ -29,7 +29,7 @@
     
     // 标题
     self.title = @"扫一扫";
-//    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     [self scanQR];
 
 }

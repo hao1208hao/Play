@@ -34,8 +34,8 @@
         self.window.rootViewController = guide;
     }else{
         QDBTabBarVC *tabbar = [[QDBTabBarVC alloc] init];
-        QDBNavController * nav = [[QDBNavController alloc]initWithRootViewController:tabbar];
-        self.window.rootViewController = nav;
+        //QDBNavController * nav = [[QDBNavController alloc]initWithRootViewController:tabbar];
+        self.window.rootViewController = tabbar;
     }
     
     [self.window makeKeyAndVisible];

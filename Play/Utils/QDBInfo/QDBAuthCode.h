@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^getAuthCodeBlock)(NSString* codeStr);
+
 @interface QDBAuthCode : UIView
 
++(instancetype)shareQDBAuthCode;
+
+@property (nonatomic, copy) getAuthCodeBlock authCodeBlock;
+
+- (void)returnAuthCode:(getAuthCodeBlock)block;
 -(void)getNewAuthCode;
 @end

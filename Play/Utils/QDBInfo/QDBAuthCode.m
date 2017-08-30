@@ -17,11 +17,22 @@
 @interface QDBAuthCode()
 
 @property (strong, nonatomic) NSArray *dataArray;//字符素材数组
-@property (strong, nonatomic) NSMutableString *authCodeStr;//验证码字符串
-
+//验证码字符串
+@property(strong,nonatomic) NSMutableString* authCodeStr;
 @end
 
 @implementation QDBAuthCode
+
++(instancetype)shareQDBAuthCode{
+    static QDBAuthCode* share = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (share == nil) {
+            share = [[self alloc]init];            
+        }
+    });
+    return share;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -32,7 +43,7 @@
         self.layer.masksToBounds = YES;
         self.backgroundColor = kRandomColor;
         
-        [self getAuthcode];//获得随机验证码
+        //[self getAuthcode];//获得随机验证码
     }
     return self;
 }
@@ -51,6 +62,10 @@
         NSInteger index = arc4random() % (_dataArray.count-1);
         NSString *tempStr = [_dataArray objectAtIndex:index];
         _authCodeStr = (NSMutableString *)[_authCodeStr stringByAppendingString:tempStr];
+    }
+    
+    if (self.authCodeBlock != nil) {
+        self.authCodeBlock(_authCodeStr);
     }
 }
 
@@ -121,6 +136,10 @@
         //画线
         CGContextStrokePath(context);
     }
+}
+
+- (void)returnAuthCode:(getAuthCodeBlock)block{
+    self.authCodeBlock = block;
 }
 
 @end

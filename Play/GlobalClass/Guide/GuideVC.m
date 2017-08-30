@@ -57,8 +57,7 @@
 /**
  *  添加引导图片
  */
--(void)AddGuideImg{
-    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+-(void)AddGuideImg{    
     for (int i=0; i<totalCounts; i++) {
         UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i*SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         NSString* imageNameStr =[NSString stringWithFormat:@"Guide%i.jpg",i+1];

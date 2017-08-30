@@ -57,9 +57,9 @@
 }
 
 -(void)foreach{
-    NSArray* titleArr = @[@"拍照",@"生成二维码",@"扫一扫",@"截屏",@"测试Gzip",@"wkwebView",@"简体转繁体",@"验证码",@"识别二维码",@"微信",@"QQ空间",@"QQ",@"微信朋友圈",@"微信",@"QQ空间",@"QQ"];
+    NSArray* titleArr = @[@"拍照",@"生成二维码",@"扫一扫",@"截屏",@"测试Gzip",@"wkwebView",@"简体转繁体",@"验证码"];
     
-    int col = 5;//列
+    int col = 4;//列
     int row = titleArr.count/col; //行
     if (titleArr.count%col>0) {
         row +=1;
@@ -90,10 +90,10 @@
     }
 }
 
--(void)test:(UILongPressGestureRecognizer*)ss{
+-(void)test:(UITapGestureRecognizer*)ss{
     
     UIImageView* imgv = (UIImageView*)ss.view;
-    
+    //最低系统版本要求  8.0
     NSString* result = [QRTool recognizeImgWithImage:imgv.image];
     UIAlertView* alert =[[UIAlertView alloc]initWithTitle:@"识别结果" message:result delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
     [alert show];
@@ -116,17 +116,24 @@
         NSString* str = qrArr[i];
         
         UIImage* img =[QRTool createQRImgWithContent:str imgSize:200];
+        
+        /*
         UIImageView* imgV = [[UIImageView alloc]initWithImage:img];
         [imgV setFrame:CGRectMake(50, 100, 200, 200)];
         [self.view addSubview:imgV];
+        */
         
+        HHShowImage2* alert=[[HHShowImage2 alloc] initWithImage:img];
+        [alert showInView:[[[UIApplication sharedApplication] windows] lastObject]];
+        
+        /*
         //长按手势
         [imgV setUserInteractionEnabled:YES];
-        UILongPressGestureRecognizer* longT = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(test:)];
+        UITapGestureRecognizer* longT = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(test:)];
         [longT setNumberOfTouchesRequired:1];
         [imgV addGestureRecognizer:longT];
         
-        
+        */
     }else if(tag == 2){
         ScanQR *scan = [[ScanQR alloc]init];
         scan.scanDelegate = self;
@@ -149,82 +156,40 @@
         NSMutableArray* arr = [NSMutableArray arrayWithArray:@[@"loginAction",@"closeCurrPage"]];
         wk.jsFunName = arr;
         wk.wkWebDelegate = self;
-        [self presentViewController:wk animated:YES completion:nil];
+        [self.navigationController pushViewController:wk animated:YES];
+        
+        //[self presentViewController:wk animated:YES completion:nil];
         
     }else if(tag == 6){
         NSString* zh_hant = [[convertGB_BIG new] gbToBig5:@"首页"];
         NSLog(@"繁体字是：%@", zh_hant);
+        NSString* msg =[NSString stringWithFormat:@"首页的繁体字是：%@",zh_hant];
+        CommonAlert(msg);
     }else if(tag == 7){
         //本地生成验证码
+        /*
         QDBAuthCode* authCodeV = [[QDBAuthCode alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-100)/2, 450, 100, 40)];
-        authCodeV.layer.cornerRadius = 5;
+        //authCodeV.layer.cornerRadius = 5;
         [self.view addSubview:authCodeV];
+        
+        [authCodeV returnAuthCode:^(NSString *codeStr) {
+            NSLog(@"=========%@",codeStr);
+        }];
+        */
+        
+        
+        QDBAuthCode* authCodeV = [QDBAuthCode shareQDBAuthCode];
+        [authCodeV setFrame:CGRectMake((SCREEN_WIDTH-100)/2, 450, 100, 40)];
+        [authCodeV returnAuthCode:^(NSString *codeStr) {
+            NSLog(@"=========%@",codeStr);
+        }];
+        [authCodeV getNewAuthCode];
+        
+        [self.view addSubview:authCodeV];
+        
     }else if(tag == 8){
-        //识别二维码
-        UIImage* img = [UIImage imageNamed:@"rec"];
-        //最低系统版本要求  8.0
-        NSString* result = [QRTool recognizeImgWithImage:img];
-        UIAlertView* alert =[[UIAlertView alloc]initWithTitle:@"识别结果" message:result delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-        [alert show];
+        
     }else if(tag == 9){
-        
-        NSArray* arr = @[@[@"1",@"2"],@[@"a",@"b"],@[@"3",@"4",@"5"],@[@"c",@"d",@"e"]];
-        
-        
-        int total = 1;
-        //计算笛卡尔积最后一维数组元素个数
-        for (int i=0;i<arr.count;i++) {
-            NSArray* a =arr[i];
-            total *= a.count;
-        }
-        
-        
-        NSMutableDictionary* myResult = [[NSMutableDictionary alloc]init];
-        
-        int itemLoopNum = 1;
-        int loopPerItem = 1;
-        int now = 1;
-        for (int x=0;x<arr.count;x++) {
-            NSArray* b = arr[x];
-            now *= b.count;
-            
-            int index = 0;
-            int currentSize = b.count;  //2 2 3 3
-            
-            itemLoopNum = total / now;  //18 9 3 1
-            loopPerItem = total / (itemLoopNum * currentSize); //1 2 4 12
-            
-            int myIndex = 0;
-            
-            for (int y=0;y<b.count;y++) {  //当前数组元素循环个数次 2 2 3 3
-                for (int i = 0; i < loopPerItem; i++) {  //1 2 4 12 该数组每个元素需要重复循环的次数
-                    if (myIndex == b.count) {  //每个数组循环完一次后重新循环
-                        myIndex = 0;
-                    }
-                    
-                    for (int j = 0; j < itemLoopNum; j++) {  //18 9 3 1 //每个元素每次循环次数
-                        NSString* str = @"";
-                        if(myResult.count>index){
-                            str = [NSString stringWithFormat:@"%@,%@",myResult[[NSString stringWithFormat:@"%d",index]],b[myIndex]];
-                        }else{
-                            str = [NSString stringWithFormat:@"%@",b[myIndex]];
-                        }
-                        
-                        [myResult setObject:str forKey:[NSString stringWithFormat:@"%d",index]];
-                        
-                        
-                        index++;
-                        
-                    }
-                    myIndex++;
-                }  
-                
-            }  
-            
-            
-        }  
-        
-        NSLog(@"========%@",myResult);
         
     }else  if(tag == 10){
        
@@ -279,6 +244,7 @@
         }
     }else if([jsFunctionName isEqualToString:@"closeCurrPage"]){
         [self dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

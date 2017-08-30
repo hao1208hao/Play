@@ -31,8 +31,13 @@
     // 设置标题文字颜色
 //    [navBar setBackgroundImage:img forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     
-    [navBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    [navBar setBarTintColor:[UIColor redColor]];
+    
+    
+    
+    //[navBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    
+    
+    [navBar setBarTintColor:[UIColor lightGrayColor]];
     
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     [navBar setShadowImage:[UIImage new]];
@@ -49,7 +54,7 @@
     
     if (self.viewControllers.count > 0) {
         // 如果不是根控制器创建返回按钮
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"navBack" highIcon:@"navBack" target:self action:@selector(backAction)];
+        //viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"navBack" highIcon:@"navBack" target:self action:@selector(backAction)];
 
         // 背景颜色
         viewController.view.backgroundColor = GlobalBackgroundColor;

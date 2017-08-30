@@ -35,6 +35,8 @@
     ViewController * home = [[ViewController alloc]init];
     SecondVC* second = [[SecondVC alloc]init];
     
+    
+    
     [self setupChildViewController:home title:@"第一页" imageName:@"1" selectedImageName:@"1"];
 
     [self setupChildViewController:second title:@"第二页" imageName:@"1" selectedImageName:@"1"];

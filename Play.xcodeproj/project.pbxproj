@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		914DBFBE3C01A2AB5794836F /* libPods-Play.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF6A0E04ADE67B19E7A15CD6 /* libPods-Play.a */; };
+		9D5836231F56BC5200130302 /* HHScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5836221F56BC5200130302 /* HHScrollView.m */; };
+		9D5836261F56C01600130302 /* HHShowImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5836251F56C01600130302 /* HHShowImage.m */; };
+		9D5836291F56C49A00130302 /* HHShowImage2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5836281F56C49A00130302 /* HHShowImage2.m */; };
 		9D6AB41E1DE3EF5100C8C394 /* big5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D6AB4171DE3EF5100C8C394 /* big5.txt */; };
 		9D6AB41F1DE3EF5100C8C394 /* faces.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D6AB4181DE3EF5100C8C394 /* faces.txt */; };
 		9D6AB4201DE3EF5100C8C394 /* gb.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D6AB4191DE3EF5100C8C394 /* gb.txt */; };
@@ -15,7 +18,6 @@
 		9D6AB4221DE3EF5100C8C394 /* split.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D6AB41B1DE3EF5100C8C394 /* split.txt */; };
 		9D6AB4231DE3EF5100C8C394 /* convertGB_BIG.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6AB41D1DE3EF5100C8C394 /* convertGB_BIG.m */; };
 		9D6AB4701DE684F100C8C394 /* QDBAuthCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6AB46F1DE684F100C8C394 /* QDBAuthCode.m */; };
-		9DC473F71E2F17140023D40D /* rec@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC473F61E2F17140023D40D /* rec@2x.png */; };
 		9DFE7AA71E32023C00F0883E /* ShareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFE7AA61E32023C00F0883E /* ShareVC.m */; };
 		A00376821DAF8A1E009390B8 /* WKDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A003767F1DAF8A1E009390B8 /* WKDelegateController.m */; };
 		A00376831DAF8A1E009390B8 /* WKWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00376811DAF8A1E009390B8 /* WKWebViewVC.m */; };
@@ -132,6 +134,12 @@
 
 /* Begin PBXFileReference section */
 		8F98F1468FC2F0A7B58FC7E2 /* Pods-Play.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Play.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Play/Pods-Play.debug.xcconfig"; sourceTree = "<group>"; };
+		9D5836211F56BC5200130302 /* HHScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHScrollView.h; sourceTree = "<group>"; };
+		9D5836221F56BC5200130302 /* HHScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHScrollView.m; sourceTree = "<group>"; };
+		9D5836241F56C01600130302 /* HHShowImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHShowImage.h; sourceTree = "<group>"; };
+		9D5836251F56C01600130302 /* HHShowImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHShowImage.m; sourceTree = "<group>"; };
+		9D5836271F56C49A00130302 /* HHShowImage2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHShowImage2.h; sourceTree = "<group>"; };
+		9D5836281F56C49A00130302 /* HHShowImage2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHShowImage2.m; sourceTree = "<group>"; };
 		9D6AB4171DE3EF5100C8C394 /* big5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = big5.txt; sourceTree = "<group>"; };
 		9D6AB4181DE3EF5100C8C394 /* faces.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = faces.txt; sourceTree = "<group>"; };
 		9D6AB4191DE3EF5100C8C394 /* gb.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gb.txt; sourceTree = "<group>"; };
@@ -141,7 +149,6 @@
 		9D6AB41D1DE3EF5100C8C394 /* convertGB_BIG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = convertGB_BIG.m; sourceTree = "<group>"; };
 		9D6AB46E1DE684F100C8C394 /* QDBAuthCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBAuthCode.h; sourceTree = "<group>"; };
 		9D6AB46F1DE684F100C8C394 /* QDBAuthCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBAuthCode.m; sourceTree = "<group>"; };
-		9DC473F61E2F17140023D40D /* rec@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rec@2x.png"; sourceTree = "<group>"; };
 		9DFE7AA51E32023B00F0883E /* ShareVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareVC.h; sourceTree = "<group>"; };
 		9DFE7AA61E32023C00F0883E /* ShareVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareVC.m; sourceTree = "<group>"; };
 		A003767E1DAF8A1E009390B8 /* WKDelegateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKDelegateController.h; sourceTree = "<group>"; };
@@ -505,11 +512,13 @@
 				A0FDC5171D2F934400F7030C /* GlobalClass */,
 				A05049FC1D2F8BDE00DF9978 /* ViewController.h */,
 				A05049FD1D2F8BDE00DF9978 /* ViewController.m */,
-				A05049F61D2F8BDE00DF9978 /* Supporting Files */,
 				A00F10CD1D45F37D00FFB9F0 /* SecondVC.h */,
 				A00F10CE1D45F37D00FFB9F0 /* SecondVC.m */,
 				9DFE7AA51E32023B00F0883E /* ShareVC.h */,
 				9DFE7AA61E32023C00F0883E /* ShareVC.m */,
+				9D5836211F56BC5200130302 /* HHScrollView.h */,
+				9D5836221F56BC5200130302 /* HHScrollView.m */,
+				A05049F61D2F8BDE00DF9978 /* Supporting Files */,
 			);
 			path = Play;
 			sourceTree = "<group>";
@@ -517,7 +526,6 @@
 		A05049F61D2F8BDE00DF9978 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9DC473F61E2F17140023D40D /* rec@2x.png */,
 				A0FDC51B1D2F948500F7030C /* MyPre.pch */,
 				A05049FF1D2F8BDE00DF9978 /* Main.storyboard */,
 				A0504A021D2F8BDE00DF9978 /* Assets.xcassets */,
@@ -770,6 +778,10 @@
 			children = (
 				A0FDC5511D2F983500F7030C /* QDBAlert.h */,
 				A0FDC5521D2F983500F7030C /* QDBAlert.m */,
+				9D5836241F56C01600130302 /* HHShowImage.h */,
+				9D5836251F56C01600130302 /* HHShowImage.m */,
+				9D5836271F56C49A00130302 /* HHShowImage2.h */,
+				9D5836281F56C49A00130302 /* HHShowImage2.m */,
 			);
 			path = QDBAlert;
 			sourceTree = "<group>";
@@ -1234,7 +1246,6 @@
 				A0FDC6671D2F983600F7030C /* Resoure.bundle in Resources */,
 				A0FDC6751D2F983600F7030C /* read_me.txt in Resources */,
 				A00F10B41D45B82F00FFB9F0 /* btn@2x.png in Resources */,
-				9DC473F71E2F17140023D40D /* rec@2x.png in Resources */,
 				9D6AB41F1DE3EF5100C8C394 /* faces.txt in Resources */,
 				A0FDC6351D2F983600F7030C /* MBProgressHUD.bundle in Resources */,
 				A0FDC6701D2F983600F7030C /* WebViewJavascriptBridge.js.txt in Resources */,
@@ -1346,6 +1357,7 @@
 				A0FDC6501D2F983600F7030C /* IQPreviousNextView.m in Sources */,
 				A0FDC6781D2F983600F7030C /* UITabBarItem+WZLBadge.m in Sources */,
 				A05049F81D2F8BDE00DF9978 /* main.m in Sources */,
+				9D5836231F56BC5200130302 /* HHScrollView.m in Sources */,
 				A0FDC6731D2F983600F7030C /* WKWebViewJavascriptBridge.m in Sources */,
 				A0FDC6711D2F983600F7030C /* WebViewJavascriptBridge.m in Sources */,
 				A0FDC6451D2F983600F7030C /* RSA.m in Sources */,
@@ -1357,6 +1369,7 @@
 				A0FDC6651D2F983600F7030C /* GTMBase64.m in Sources */,
 				A0FDC6461D2F983600F7030C /* IQNSArray+Sort.m in Sources */,
 				A0D4C3811D4877AE002A2A7F /* QRTool.m in Sources */,
+				9D5836291F56C49A00130302 /* HHShowImage2.m in Sources */,
 				9D6AB4701DE684F100C8C394 /* QDBAuthCode.m in Sources */,
 				A0FDC6521D2F983600F7030C /* IQToolbar.m in Sources */,
 				A00376821DAF8A1E009390B8 /* WKDelegateController.m in Sources */,
@@ -1367,6 +1380,7 @@
 				A034D7401D8943E000943E7B /* NSData+GZIP.m in Sources */,
 				A0FDC6491D2F983600F7030C /* IQUIView+Hierarchy.m in Sources */,
 				A0FDC6371D2F983600F7030C /* MHAsiNetworkHandler.m in Sources */,
+				9D5836261F56C01600130302 /* HHShowImage.m in Sources */,
 				A0FDC67A1D2F983600F7030C /* UIView+WZLBadge.m in Sources */,
 				A0FDC64A1D2F983600F7030C /* IQUIViewController+Additions.m in Sources */,
 				A0FDC64D1D2F983600F7030C /* IQKeyboardReturnKeyHandler.m in Sources */,
@@ -1526,7 +1540,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiandai.play;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b44c1537-9646-41e6-ae9a-cd2fed29f853";
+				PROVISIONING_PROFILE = "9b70948d-03e7-443c-a2a9-b45462223716";
 				PROVISIONING_PROFILE_SPECIFIER = DCS_Custom;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

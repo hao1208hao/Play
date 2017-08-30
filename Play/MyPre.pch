@@ -57,4 +57,8 @@
 #import "QDBSingleton.h"
 #import "UIView+Extension.h"
 #import <UMMobClick/MobClick.h>
+
+#import "HHShowImage.h"
+#import "HHShowImage2.h"
+
 #endif /* qdb_pch */
