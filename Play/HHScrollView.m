@@ -22,6 +22,7 @@
     
     UIScrollView* scroll = [[UIScrollView alloc]initWithFrame:self.view.bounds];
     self.scroll = scroll;
+    [scroll setContentSize:CGSizeMake(self.view.bounds.size.width, 600)];
     [scroll addTwitterCoverWithImage:[UIImage imageNamed:@"Guide1.jpg"]];
     [self.view addSubview:scroll];
 }
