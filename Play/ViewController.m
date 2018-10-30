@@ -20,6 +20,8 @@
 #import "convertGB_BIG.h"
 #import "QDBAuthCode.h"   //本地生成验证码
 
+#import "HHLoginAuthTool.h"
+
 @interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,scanResultDelegate,getTakeImgDelegate,WKWebDelegate>
 
 /** 最后一次拍照ID */
@@ -57,7 +59,7 @@
 }
 
 -(void)foreach{
-    NSArray* titleArr = @[@"拍照",@"生成二维码",@"扫一扫",@"截屏",@"测试Gzip",@"wkwebView",@"简体转繁体",@"验证码"];
+    NSArray* titleArr = @[@"拍照",@"生成二维码",@"扫一扫",@"截屏",@"测试Gzip",@"wkwebView",@"简体转繁体",@"验证码",@"FaceID或者指纹"];
     
     int col = 4;//列
     int row = titleArr.count/col; //行
@@ -188,6 +190,20 @@
         [self.view addSubview:authCodeV];
         
     }else if(tag == 8){
+        //FaceID 或 指纹 
+        [[HHLoginAuthTool shareLoginAuth] loginByLocalAuth:^(BOOL result, NSError *error) {
+            if(result){
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    CommonAlert(@"验证成功");
+                });
+                
+            }else{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    CommonAlert(error.localizedDescription);
+                });
+            }
+        }];
+        
         
     }else if(tag == 9){
         

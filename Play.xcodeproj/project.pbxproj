@@ -38,6 +38,7 @@
 		A0504A031D2F8BDE00DF9978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0504A021D2F8BDE00DF9978 /* Assets.xcassets */; };
 		A0504A061D2F8BDE00DF9978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0504A041D2F8BDE00DF9978 /* LaunchScreen.storyboard */; };
 		A05A93281D50784800601833 /* UIScrollView+TwitterCover.m in Sources */ = {isa = PBXBuildFile; fileRef = A05A93271D50784800601833 /* UIScrollView+TwitterCover.m */; };
+		A073D95C21885FD500C3DA04 /* HHLoginAuthTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A073D95A21885FD500C3DA04 /* HHLoginAuthTool.m */; };
 		A0D4C37F1D4877AE002A2A7F /* qr_scan_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D4C3761D4877AE002A2A7F /* qr_scan_line@2x.png */; };
 		A0D4C3801D4877AE002A2A7F /* qr_scan_line_jd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D4C3771D4877AE002A2A7F /* qr_scan_line_jd@2x.png */; };
 		A0D4C3811D4877AE002A2A7F /* QRTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D4C3791D4877AE002A2A7F /* QRTool.m */; };
@@ -179,6 +180,8 @@
 		A0504A071D2F8BDE00DF9978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A05A93261D50784800601833 /* UIScrollView+TwitterCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TwitterCover.h"; sourceTree = "<group>"; };
 		A05A93271D50784800601833 /* UIScrollView+TwitterCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TwitterCover.m"; sourceTree = "<group>"; };
+		A073D95A21885FD500C3DA04 /* HHLoginAuthTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHLoginAuthTool.m; sourceTree = "<group>"; };
+		A073D95B21885FD500C3DA04 /* HHLoginAuthTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHLoginAuthTool.h; sourceTree = "<group>"; };
 		A0D4C3761D4877AE002A2A7F /* qr_scan_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qr_scan_line@2x.png"; sourceTree = "<group>"; };
 		A0D4C3771D4877AE002A2A7F /* qr_scan_line_jd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qr_scan_line_jd@2x.png"; sourceTree = "<group>"; };
 		A0D4C3781D4877AE002A2A7F /* QRTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRTool.h; sourceTree = "<group>"; };
@@ -604,6 +607,8 @@
 		A0FDC5221D2F983500F7030C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A073D95B21885FD500C3DA04 /* HHLoginAuthTool.h */,
+				A073D95A21885FD500C3DA04 /* HHLoginAuthTool.m */,
 				9D6AB4151DE3EF5100C8C394 /* ConvertUtil */,
 				A003767D1DAF8A1E009390B8 /* WKWebView */,
 				A05A93251D50784800601833 /* TwitterCover */,
@@ -1208,7 +1213,8 @@
 				TargetAttributes = {
 					A05049F21D2F8BDE00DF9978 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 3795HA7358;
+						DevelopmentTeam = 3C2NG8ZA9B;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1329,6 +1335,7 @@
 				A0FDC6271D2F983600F7030C /* UIBarButtonItem+WZLBadge.m in Sources */,
 				A0FDC67D1D2F998300F7030C /* RTLabel.m in Sources */,
 				A00F10AB1D45B51B00FFB9F0 /* GuideVC.m in Sources */,
+				A073D95C21885FD500C3DA04 /* HHLoginAuthTool.m in Sources */,
 				A0FDC6431D2F983600F7030C /* NSData+INB.m in Sources */,
 				A0FDC6391D2F983600F7030C /* MHNetworkManager.m in Sources */,
 				A0FDC63E1D2F983600F7030C /* QDBLocation.m in Sources */,
@@ -1520,8 +1527,9 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zhonghua Wei (547346FZJW)";
-				DEVELOPMENT_TEAM = 3795HA7358;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3C2NG8ZA9B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Play/Utils/Third/UMeng",
@@ -1538,10 +1546,10 @@
 					"$(PROJECT_DIR)/Play/Utils/Third/weixin",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.qiandai.play;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haohao.play;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "9b70948d-03e7-443c-a2a9-b45462223716";
-				PROVISIONING_PROFILE_SPECIFIER = DCS_Custom;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1551,8 +1559,10 @@
 			baseConfigurationReference = EE0B80105717015F44A231FE /* Pods-Play.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3C2NG8ZA9B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Play/Utils/Third/UMeng",
@@ -1569,9 +1579,10 @@
 					"$(PROJECT_DIR)/Play/Utils/Third/weixin",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.qiandai.play;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haohao.play;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -24,6 +24,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>若不允许，您将无法使用扫一扫。</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>FaceID 解锁使用</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>若不允许，您将无法使用定位功能。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
