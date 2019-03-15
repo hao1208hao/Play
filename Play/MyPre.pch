@@ -60,5 +60,6 @@
 
 #import "HHShowImage.h"
 #import "HHShowImage2.h"
+#import "UIView+Corner.h"
 
 #endif /* qdb_pch */

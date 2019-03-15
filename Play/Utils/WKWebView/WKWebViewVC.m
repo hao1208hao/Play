@@ -108,6 +108,60 @@
     }
 }
 
+// 发送信息给网页
+-(void)sendDataToHtmlWith:(NSString *)functionName andParam:(id)reqObj{
+    
+    id obj = reqObj;
+    
+    //数据转json
+    NSDictionary *paramDict = nil;
+    
+    if (reqObj == nil) {
+        NSDictionary* data = [NSDictionary new];
+        
+        paramDict = [NSDictionary dictionaryWithObjectsAndKeys:@"",@"message",@"0000",@"statusCode",data, @"data",
+                     nil];
+    }else{
+        NSString* msg = @"";
+        NSString* statusCode = @"";
+        NSArray* data = @[];
+        
+        if([obj isKindOfClass:[NSDictionary class]]){
+            NSDictionary* dict =(NSDictionary*)obj;
+            
+            msg = dict[@"msg"];
+            statusCode = dict[@"code"];
+            
+            paramDict = [NSDictionary dictionaryWithObjectsAndKeys:msg,@"message",statusCode,@"statusCode",dict, @"data",
+                         nil];
+            
+        }else if([data isKindOfClass:[NSMutableArray class]]){
+            NSMutableArray* dataArr = (NSMutableArray*)data;
+            paramDict = [NSDictionary dictionaryWithObjectsAndKeys:msg,@"message",statusCode,@"statusCode",dataArr, @"data",
+                         nil];
+        }
+    }
+    
+    
+    //convert object to data
+    NSData* jsonData =[NSJSONSerialization dataWithJSONObject:paramDict options:NSJSONWritingPrettyPrinted error:nil];
+    
+    //print out the data contents
+    NSString* jsonParam =[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    
+    NSString* jsFunction = [NSString stringWithFormat:@"%@(%@)",functionName,jsonParam];
+    
+    [self.wk evaluateJavaScript:jsFunction completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        
+        NSLog(@"%@",result);
+        
+    }];
+    
+}
+
+
+
 #pragma mark - WKScriptMessageHandler
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     /** 

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <WebKit/WKWebView.h>
 
+typedef void(^htmlRespBlock)(NSString* functionName,NSMutableDictionary* respDict,WKWebView* wk);
+
 @protocol WKWebDelegate <NSObject>
 
 @required
@@ -43,5 +45,9 @@
 
 /** 代理 */
 @property(nonatomic,assign) id<WKWebDelegate> wkWebDelegate;
+
+@property(nonatomic,copy) htmlRespBlock htmlBlock;
+
+-(void)sendDataToHtmlWith:(NSString *)functionName andParam:(id)reqObj;
 
 @end

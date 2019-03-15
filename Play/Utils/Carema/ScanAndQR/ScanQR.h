@@ -14,10 +14,16 @@
 
 @end
 
+//block 形式
+typedef void(^scanResultBlock)(NSString* result);
+
 @interface ScanQR : UIViewController
 
 /** 扫描结果代理 */
 @property(nonatomic,weak) id<scanResultDelegate> scanDelegate;
+
+//block
+@property(nonatomic,copy) scanResultBlock block;
 
 /**
  *  扫描二维码

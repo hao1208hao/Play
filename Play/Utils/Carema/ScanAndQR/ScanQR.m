@@ -165,9 +165,27 @@
         AVMetadataMachineReadableCodeObject *object = [metadataObjects lastObject];
         
         [self getResult:object.stringValue];
-        [self.navigationController popViewControllerAnimated:YES];
+        
+        if(self.block){
+            NSArray *viewcontrollers = self.navigationController.viewControllers;
+            if (viewcontrollers.count>1) {
+                if ([viewcontrollers objectAtIndex:viewcontrollers.count-1]==self) {
+                    //push方式
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+            }
+            else{
+                //present方式
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+            self.block(object.stringValue);
+        }
+        
     } else {
         NSLog(@"没有扫描到数据");
+        if(self.block){
+            self.block(@"");
+        }
     }
 }
 

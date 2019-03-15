@@ -31,8 +31,7 @@
 +(NSString*)dictToJson:(NSDictionary*)dict;
 /**字典转JSON数组*/
 +(NSArray<NSDictionary*>*)jsonToArray:(NSString *)jsonArrayStr;
-+(NSString *)getField5f34WithICData:(NSString *)ICData;
-
+ 
 +(NSString *)parseCardNum:(NSString *)trackInfo;
 
 /**

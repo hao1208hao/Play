@@ -244,38 +244,7 @@
         return array;
     }
 }
-
-+(NSString *)getField5f34WithICData:(NSString *)ICData
-{
-    NSString *field5f34 = @"";
-    NSRange range = [[ICData uppercaseString] rangeOfString:@"5F34"];
-    unsigned long loc = range.location + 4;
-    int len = 2;
-    NSString *field5f34LenHex= [ICData substringWithRange:NSMakeRange(loc, len)];
-    NSScanner *scanner = [NSScanner scannerWithString:field5f34LenHex];
-    unsigned int field5f34Len;
-    [scanner scanHexInt:&field5f34Len];
-    loc += len;
-    len = field5f34Len * 2;
-    field5f34 = [ICData substringWithRange:NSMakeRange(loc, len)];
-    if ([field5f34 length]==2) {
-        field5f34 = [NSString stringWithFormat:@"00%@", field5f34];
-    }
-    return field5f34;
-}
-
-+(NSString *)parseCardNum:(NSString *)trackInfo
-{
-    if (trackInfo.length==0) {
-        return @"";
-    }
-    NSString *lengStr = [trackInfo substringWithRange:NSMakeRange(2,2)];
-    long strLeng = strtoul([lengStr UTF8String], 0, 16)*2;
-    NSString *cardNoSrt = [trackInfo substringWithRange:NSMakeRange(4, strLeng)];
-    NSString *cardNo = [cardNoSrt stringByReplacingOccurrencesOfString:@"f" withString:@""];
-    cardNo = [cardNo stringByReplacingOccurrencesOfString:@"d" withString:@"*"];
-    return cardNo;
-}
+ 
 
 // Get IP Address
 +(NSString *)getIPAddress {
