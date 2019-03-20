@@ -14,8 +14,8 @@
 #import "AppDelegate.h"
 #import "NSString+MD5.h"
 #import "NSString+reverse.h"
-#import "RSA.h"
-#import "INBAES.h"
+
+
 @implementation MHNetworkManager
 + (instancetype)allocWithZone:(struct _NSZone *)zone
 {
@@ -286,43 +286,7 @@
     QDBLog(@"---生成的AES加密用的key:%@",ms);
     return ms;
 }
-
-/**
- *   通过 Block回调结果
- *
- *   @param paramsDict    请求的参数字典
- *   @param successBlock  成功的回调
- *   @param failureBlock  失败的回调
- *   @param showHUD       是否加载进度指示器
- */
-+ (void)postSafeReqeustWithParams:(NSDictionary*)params
-                     successBlock:(MHAsiSuccessBlock)successBlock
-                     failureBlock:(MHAsiFailureBlock)failureBlock
-                          showHUD:(BOOL)showHUD
-{
-    //3.获取aes加密的key
-    NSString * aesKey = [MHNetworkManager getRandKey];
-    NSString * rsaKey = [RSA encryptString:aesKey publicKey:RSA_PUB_KEY];
-    //4.反转获得向量ivkey
-    NSString * ivKey = [aesKey reverse];
-    //5.aes加密。
-    INBAES *aes = [INBAES sharedINBAES];
-    [aes updateKeyWithKeySize:kCCKeySizeAES128];
-    NSString* jsonParams = dictToJson(params);
-    NSData *plainData = [jsonParams dataUsingEncoding:NSUTF8StringEncoding];
-    NSData * keyData = [aesKey dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *ivData = [ivKey dataUsingEncoding:NSUTF8StringEncoding];
-    NSData * binData = [aes doCipher:plainData key:keyData iv:ivData operation:kCCEncrypt];
-    //aes加密的结果
-    NSData * base64Data = [binData base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    
-    NSString * reqVal = [[NSString alloc]initWithData:base64Data encoding:NSUTF8StringEncoding];
-    
-    NSDictionary* reqDict = [self getFinalParamDictWithReq:params andEncryptReq:reqVal andEncryptKey:rsaKey];
-    
-    [self postReqeustWithURL:reqURL params:reqDict target:nil action:nil delegate:nil successBlock:successBlock failureBlock:failureBlock showHUD:showHUD];
-    
-}
+ 
 
 /**
  *  拼接最后的请求数据

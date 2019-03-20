@@ -18,14 +18,17 @@
 #import "WKWebViewVC.h"
 
 #import "convertGB_BIG.h"
-#import "QDBAuthCode.h"   //本地生成验证码
 
 #import "HHLoginAuthTool.h"
+ 
 
 @interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,scanResultDelegate,getTakeImgDelegate,WKWebDelegate>
 
 /** 最后一次拍照ID */
 @property(nonatomic,assign) NSInteger lastTakePicID;
+
+
+ 
 
 @end
 
@@ -179,7 +182,7 @@
         }];
         */
         
-        
+        /*
         QDBAuthCode* authCodeV = [QDBAuthCode shareQDBAuthCode];
         [authCodeV setFrame:CGRectMake((SCREEN_WIDTH-100)/2, 450, 100, 40)];
         [authCodeV returnAuthCode:^(NSString *codeStr) {
@@ -188,6 +191,9 @@
         [authCodeV getNewAuthCode];
         
         [self.view addSubview:authCodeV];
+        */
+        
+         
         
     }else if(tag == 8){
         //FaceID 或 指纹 

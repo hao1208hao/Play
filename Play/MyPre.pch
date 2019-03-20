@@ -43,8 +43,7 @@
 
 #import "QDBNavController.h"
 //自定义按钮
-//#import "CustomBtn.h"
-#import "UIButton+Corner.h"
+//#import "CustomBtn.h" 
 #import "QDBInfo.h"
 #import "QDBLocation.h"
 #import "QDBDataManager.h"
@@ -54,9 +53,7 @@
 #import "MBProgressHUD+MJ.h"
 
 #import <SSKeychain.h>
-#import "QDBSingleton.h"
-#import "UIView+Extension.h"
-#import <UMMobClick/MobClick.h>
+#import "QDBSingleton.h"  
 
 #import "HHShowImage.h"
 #import "HHShowImage2.h"

@@ -22,6 +22,10 @@
 		A00376831DAF8A1E009390B8 /* WKWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00376811DAF8A1E009390B8 /* WKWebViewVC.m */; };
 		A00376851DAF8AD9009390B8 /* testWKWeb.html in Resources */ = {isa = PBXBuildFile; fileRef = A00376841DAF8AD9009390B8 /* testWKWeb.html */; };
 		A00BEF4B223B527A00AA0835 /* UIView+Corner.m in Sources */ = {isa = PBXBuildFile; fileRef = A00BEF4A223B527A00AA0835 /* UIView+Corner.m */; };
+		A00BEF522240F4AF00AA0835 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FDC5631D2F983500F7030C /* GTMBase64.m */; };
+		A00BEF552240FE5C00AA0835 /* GuideGradualVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00BEF542240FE5C00AA0835 /* GuideGradualVC.m */; };
+		A00BEF5C224226FF00AA0835 /* VideoLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00BEF5B224226FF00AA0835 /* VideoLoginVC.m */; };
+		A00BEF5D22422A4400AA0835 /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A00BEF592242096E00AA0835 /* 1.mp4 */; };
 		A00F10AB1D45B51B00FFB9F0 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F10AA1D45B51B00FFB9F0 /* GuideVC.m */; };
 		A00F10B41D45B82F00FFB9F0 /* btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F10AD1D45B82F00FFB9F0 /* btn@2x.png */; };
 		A00F10B51D45B82F00FFB9F0 /* Guide1-5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F10AE1D45B82F00FFB9F0 /* Guide1-5.jpg */; };
@@ -106,6 +110,11 @@
 		A00376841DAF8AD9009390B8 /* testWKWeb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = testWKWeb.html; sourceTree = "<group>"; };
 		A00BEF49223B527A00AA0835 /* UIView+Corner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Corner.h"; sourceTree = "<group>"; };
 		A00BEF4A223B527A00AA0835 /* UIView+Corner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Corner.m"; sourceTree = "<group>"; };
+		A00BEF532240FE5C00AA0835 /* GuideGradualVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideGradualVC.h; sourceTree = "<group>"; };
+		A00BEF542240FE5C00AA0835 /* GuideGradualVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideGradualVC.m; sourceTree = "<group>"; };
+		A00BEF592242096E00AA0835 /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
+		A00BEF5A224226FF00AA0835 /* VideoLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoLoginVC.h; sourceTree = "<group>"; };
+		A00BEF5B224226FF00AA0835 /* VideoLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoLoginVC.m; sourceTree = "<group>"; };
 		A00F10A91D45B51B00FFB9F0 /* GuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideVC.h; sourceTree = "<group>"; };
 		A00F10AA1D45B51B00FFB9F0 /* GuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideVC.m; sourceTree = "<group>"; };
 		A00F10AD1D45B82F00FFB9F0 /* btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn@2x.png"; sourceTree = "<group>"; };
@@ -312,6 +321,10 @@
 				A00F10AC1D45B82F00FFB9F0 /* Resource */,
 				A00F10A91D45B51B00FFB9F0 /* GuideVC.h */,
 				A00F10AA1D45B51B00FFB9F0 /* GuideVC.m */,
+				A00BEF532240FE5C00AA0835 /* GuideGradualVC.h */,
+				A00BEF542240FE5C00AA0835 /* GuideGradualVC.m */,
+				A00BEF5A224226FF00AA0835 /* VideoLoginVC.h */,
+				A00BEF5B224226FF00AA0835 /* VideoLoginVC.m */,
 			);
 			path = Guide;
 			sourceTree = "<group>";
@@ -319,6 +332,7 @@
 		A00F10AC1D45B82F00FFB9F0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A00BEF592242096E00AA0835 /* 1.mp4 */,
 				A00F10AD1D45B82F00FFB9F0 /* btn@2x.png */,
 				A00F10AE1D45B82F00FFB9F0 /* Guide1-5.jpg */,
 				A00F10AF1D45B82F00FFB9F0 /* Guide1.jpg */,
@@ -753,6 +767,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00BEF5D22422A4400AA0835 /* 1.mp4 in Resources */,
 				9D6AB4211DE3EF5100C8C394 /* hot.txt in Resources */,
 				A00F10B91D45B82F00FFB9F0 /* Guide3-5.jpg in Resources */,
 				A0504A061D2F8BDE00DF9978 /* LaunchScreen.storyboard in Resources */,
@@ -830,7 +845,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00BEF522240F4AF00AA0835 /* GTMBase64.m in Sources */,
 				A0FDC6291D2F983600F7030C /* CAAnimation+WAnimation.m in Sources */,
+				A00BEF552240FE5C00AA0835 /* GuideGradualVC.m in Sources */,
 				A0FDC63A1D2F983600F7030C /* MHUploadParam.m in Sources */,
 				A0FDC62C1D2F983600F7030C /* QDBConstant.m in Sources */,
 				A0FDC6341D2F983600F7030C /* MBProgressHUD+MJ.m in Sources */,
@@ -846,6 +863,7 @@
 				A0D4C38A1D489463002A2A7F /* DCSLocalWebViewVC.m in Sources */,
 				9DFE7AA71E32023C00F0883E /* ShareVC.m in Sources */,
 				A0D4C3821D4877AE002A2A7F /* QRView.m in Sources */,
+				A00BEF5C224226FF00AA0835 /* VideoLoginVC.m in Sources */,
 				A05049FE1D2F8BDE00DF9978 /* ViewController.m in Sources */,
 				A00BEF4B223B527A00AA0835 /* UIView+Corner.m in Sources */,
 				A00376831DAF8A1E009390B8 /* WKWebViewVC.m in Sources */,

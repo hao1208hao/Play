@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "QDBTabBarVC.h"
 #import "GuideVC.h"
+#import "VideoLoginVC.h"
 
 @interface AppDelegate ()
 
@@ -28,10 +29,11 @@
     application.statusBarStyle = UIStatusBarStyleLightContent;    
     
     /** 是否想要显示引导页----demo 设置每次都显示引导页 */
-    BOOL showGuide = false;
+    BOOL showGuide = true;
     if (showGuide) {
         GuideVC* guide = [[GuideVC alloc]init];
-        self.window.rootViewController = guide;
+        VideoLoginVC* video = [[VideoLoginVC alloc]init];
+        self.window.rootViewController = video;
     }else{
         QDBTabBarVC *tabbar = [[QDBTabBarVC alloc] init];
         //QDBNavController * nav = [[QDBNavController alloc]initWithRootViewController:tabbar];
